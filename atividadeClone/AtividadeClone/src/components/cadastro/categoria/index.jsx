@@ -8,7 +8,7 @@ const CadastroCategoria = () => {
   return (
     <Container>
 		<Cadastro>
-			<Title >Cadrasto de Categoria </Title>
+			<Title>Cadrasto de Categoria </Title>
 			<View style={{ marginTop: 20 }}>
 				<InnerText placeholder="Nome" />
 				<InnerText placeholder="Imagem" />

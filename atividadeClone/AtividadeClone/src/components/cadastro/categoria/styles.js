@@ -19,7 +19,7 @@ export const Title = styled.Text`
     font-size: 20px;
     font-weight: bold;
     padding-top: 20px;
-    padding-bottom: 130px;
+    padding-bottom: 10px;
     font-family: Arial;
 `;
 
@@ -32,7 +32,7 @@ export const InnerText = styled.TextInput`
     background-color: #E6E6FA;
     align-self: center;
     border-radius: 5px;
-
+    margin-bottom: 30px;
 `;
 
 export const ButtonText = styled.Text`
