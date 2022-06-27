@@ -7,31 +7,39 @@ export const Container = styled.View`
     align-items: center;
 `;
 
-export const Logo = styled.Image`
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: black;
-`;
-
-export const Alterar = styled.View`
+export const CadastroPrd = styled.View`
     height: 450px;
     width: 300px;
     background-color: #191970;
     border-radius: 10;
-    align-items: center;
-    padding-top: 20px;
 `;
-
 
 export const Title = styled.Text`
     color: #fff;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    padding-top: 40px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 60px;
     font-family: Arial;
+`;
+
+export const ViewImagem = styled.View`
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 5px;
+`;
+
+export const InnerText = styled.TextInput`
+    margin-top: 15px;
+    height: 35px;
+    width: 220px;
+    font-size: 16px;
+    padding-left: 15px;
+    background-color: #E6E6FA;
+    align-self: center;
+    border-radius: 5px;
 `;
 
 export const ButtonText = styled.Text`
@@ -40,7 +48,7 @@ export const ButtonText = styled.Text`
     padding-bottom: 8px;
 `;
 
-export const PressableAlterar = styled.Pressable`
+export const PressableCdProduto = styled.Pressable`
     height: 35px;
     width: 170px;
     background-color: #6495ED;

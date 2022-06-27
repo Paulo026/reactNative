@@ -6,9 +6,7 @@ import { ButtonText, Container, Login, PressableLogin, Title, InnerText, ViewSen
 const Test = () => {
   return (
     <Container>
-      {/* <Image 
-        source={require("./assets/icon.png")}
-      /> */}
+        <Logo />
       <Login>
         <Title>
           LOGIN

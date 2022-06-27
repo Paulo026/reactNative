@@ -2,7 +2,6 @@ import React from 'react';
 import { View } from 'react-native';
 import {  Container, ButtonText, Cadastro, PressableCadastro, Title, InnerText } from "./styles";
 
-// import { Container } from './styles';
 
 const CadastroCategoria = () => {
   return (

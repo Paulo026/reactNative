@@ -6,6 +6,14 @@ export const Container = styled.View`
     align-items: center;
 `;
 
+export const Logo = styled.Image`
+    width: 100px;
+    height: 100px;
+    
+    border-radius: 50%;
+    background-color: black;
+`;
+
 export const Login = styled.View`
     height: 450px;
     width: 300px;
