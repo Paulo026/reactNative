@@ -1,14 +1,16 @@
 import React from "react";
 import { View } from "react-native";
 import { Container, Alterar, ButtonText, PressableAlterar, Logo, Title } from "./styles";
+import logo from "./assets/logo.png";
+
 
 const AlterarSenha = () => {
 	return (
-		<Container>
+		<Container colors={["#0ff", "white", "#0ff"]}>
 			<Alterar>
-			<Logo />
-				<Title>Senha alterada com sucesso</Title>
-				<View style={{ marginTop: 20 }}>
+			<Logo source={logo} />
+				<Title>Senha alterada com sucesso!</Title>
+				<View style={{ marginTop: 5 }}>
 					<PressableAlterar>
 						<ButtonText>login</ButtonText>
 					</PressableAlterar>

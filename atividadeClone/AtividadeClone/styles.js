@@ -1,53 +1,63 @@
 import styled from "styled-components/native";
+import { LinearGradient } from "expo-linear-gradient";
+import colors from "./src/theme/colors";
 
 
-export const Container = styled.View`
+export const Container = styled(LinearGradient)`
     flex: 1;
     justify-content: center;
     align-items: center;
-`;
+ `;
 
-export const Logo = styled.Image`
-    width: 100px;
-    height: 100px;
+export const Logo= styled.Image`
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    background-color: black;
+    padding-bottom:80px;
+    margin-top: -50px;
+      
 `;
 
 export const Alterar = styled.View`
     height: 450px;
     width: 300px;
-    background-color: #191970;
     border-radius: 10;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 5px;
 `;
 
 
 export const Title = styled.Text`
-    color: #fff;
+    color: ${colors.secondary};
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    padding-top: 40px;
-    padding-bottom: 10px;
+    padding-top: 100px;
+    padding-bottom: 60px;
     font-family: Arial;
 `;
 
 export const ButtonText = styled.Text`
-    color: #fff;
+    color: ${colors.tertiary};
+    font-weight: bolder;
     font-size: 20px;
-    padding-bottom: 8px;
+    padding-bottom: 8px;    
 `;
 
-export const PressableAlterar = styled.Pressable`
-    height: 35px;
+export const PressableAlterar = styled.TouchableOpacity.attrs((props) =>({
+    activityOpacity: `${props.opacity}`,
+}))`
+   /* background-color:${(props) => props.backgroundColor || "#fff"}; */
+   opacity: 0.8;
+   height: 35px;
     width: 170px;
-    background-color: #6495ED;
     align-self: center;
     margin-top: 30px;
     border-radius: 10;
     font-weight: bold;
     align-items: center;
     justify-content: center;
+    border: #00ffff solid 3px;
+    
+   
 `;

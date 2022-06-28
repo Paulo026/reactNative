@@ -1,12 +1,13 @@
 import React from "react";
 import { TextInput, View, Image } from "react-native";
 import { ButtonText, Container, Login, PressableLogin, Title, InnerText, ViewSenha, ViewCadastro } from "./styles";
+import logo from "./assets/logo.png";
 
 
 const Test = () => {
   return (
     <Container>
-        <Logo />
+        <Logo source={logo}/>
       <Login>
         <Title>
           LOGIN

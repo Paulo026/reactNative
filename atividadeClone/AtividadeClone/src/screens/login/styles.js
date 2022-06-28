@@ -8,17 +8,16 @@ export const Container = styled.View`
 
 export const Logo = styled.Image`
     width: 100px;
-    height: 100px;
-    
+    height: 100px;    
     border-radius: 50%;
     background-color: black;
 `;
 
 export const Login = styled.View`
-    height: 450px;
-    width: 300px;
+    height: 640px;
+    width: 360px;
     background-color: #191970;
-    border-radius: 10;
+   
 `;
 
 export const ViewSenha = styled.View`
