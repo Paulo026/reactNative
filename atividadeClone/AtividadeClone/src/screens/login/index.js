@@ -1,14 +1,34 @@
 import React from "react";
 import { TextInput, View, Image } from "react-native";
-import { ButtonText, Container, Login, PressableLogin, Title, InnerText, ViewSenha, ViewCadastro } from "./styles";
+import {
+  ButtonText,
+  Container,
+  Login,
+  Logo,
+  PressableLogin,
+  Title,
+  InnerText,
+  ViewSenha,
+  ViewCadastro,
+} from "../AtividadeClone/src/screens/login/styles";
 import logo from "./assets/logo.png";
+import { LinearGradient } from "expo-linear-gradient";
 
 
 const Login = () => {
   return (
-    <Container colors={["#0ff", "white", "#0ff"]}>
-        <Logo source={logo}/>
-      <Login>
+    <Container >
+       <LinearGradient
+                colors={['#0FF', 'transparent']}
+                style={{
+                    position: "absolute", 
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    height: "30%",
+                }} />
+      <Logo source={logo}/>
+      <Acesso>
         <Title>
           LOGIN
         </Title>
@@ -27,12 +47,24 @@ const Login = () => {
           Não possui cadastro? Cadastre-se aqui.
           </ViewCadastro>
         </View>
-      </Login>
+      </Acesso>
+      <LinearGradient
+                colors={['transparent', '#0FF']}
+                style={{
+                    position: "absolute", 
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    height: "30%",
+                }} />
     </Container>
-  );
+  )
 };
 
 export default Login;
+
+
+// Verificar nome Login pois vai da error;
 
 // const temaPadrao= StyleSheet.create({
 //   container: {

@@ -1,12 +1,15 @@
 import styled from "styled-components/native";
-import { LinearGradient } from "expo-linear-gradient";
+import colors from "../../theme/colors";
 
 
-export const Container = styled(LinearGradient)`
+export const Container = styled.View`
     flex: 1;
     justify-content: center;
+    background-color: ${colors. tertiary} ;
     align-items: center;
+    padding: 40px;
 `;
+
 
 export const Logo = styled.Image`
    width: 130px;
@@ -16,7 +19,7 @@ export const Logo = styled.Image`
     margin-top: 10px;
 `;
 
-export const Login = styled.View`
+export const Acesso = styled.View`
     height: 640px;
     width: 360px;
     /* background-color: #191970; */
@@ -24,14 +27,14 @@ export const Login = styled.View`
 `;
 
 export const ViewSenha = styled.View`
-    color: #fff;
+    color: ${colors.secondary};
     text-align: center;
     font-size: 13px;
     margin-top: 5px;
 `;
 
 export const ViewCadastro = styled.View`
-    color: #fff;
+    color: ${colors.secondary};
     text-align: center;
     font-size: 13px;
     padding-top: 5px;
@@ -39,7 +42,7 @@ export const ViewCadastro = styled.View`
 
 
 export const Title = styled.Text`
-    color: #fff;
+    color: ${colors.secondary};
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -65,7 +68,7 @@ export const ButtonText = styled.Text`
     padding-bottom: 8px;
 `;
 
-export const PressableLogin = styled.Pressable`
+export const PressableLogin = styled.TouchableOpacity`
     height: 35px;
     width: 170px;
     background-color: #6495ED;
