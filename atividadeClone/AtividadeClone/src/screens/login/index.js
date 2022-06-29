@@ -4,7 +4,7 @@ import { ButtonText, Container, Login, PressableLogin, Title, InnerText, ViewSen
 import logo from "./assets/logo.png";
 
 
-const Test = () => {
+const Login = () => {
   return (
     <Container colors={["#0ff", "white", "#0ff"]}>
         <Logo source={logo}/>
@@ -32,7 +32,7 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Login;
 
 // const temaPadrao= StyleSheet.create({
 //   container: {

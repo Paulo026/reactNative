@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
-import colors from "./src/theme/colors";
+
 
 export const Container = styled(LinearGradient)`
     flex: 1;
@@ -13,13 +13,13 @@ export const Logo = styled.Image`
     height: 130px;
     border-radius: 50%;
     padding-bottom:80px;
-    margin-top: -50px;
+    margin-top: 10px;
 `;
 
 export const Login = styled.View`
     height: 640px;
     width: 360px;
-    background-color: #191970;
+    /* background-color: #191970; */
    
 `;
 
