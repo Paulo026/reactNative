@@ -1,16 +1,19 @@
 import styled from "styled-components/native";
+import { LinearGradient } from "expo-linear-gradient";
+import colors from "./src/theme/colors";
 
-export const Container = styled.View`
+export const Container = styled(LinearGradient)`
     flex: 1;
     justify-content: center;
     align-items: center;
 `;
 
 export const Logo = styled.Image`
-    width: 100px;
-    height: 100px;    
+   width: 130px;
+    height: 130px;
     border-radius: 50%;
-    background-color: black;
+    padding-bottom:80px;
+    margin-top: -50px;
 `;
 
 export const Login = styled.View`
