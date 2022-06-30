@@ -30,27 +30,19 @@ export const Title = styled.Text`
 	margin: 40px 0;
 	font-weight: 800;
 	line-height: 22px;
+	text-align: center;
 `;
 
 export const WrapperTextInfo = styled.TouchableWithoutFeedback`
 	padding: 10px;
 `;
 
-export const TextInfo = styled.TouchableOpacity`
+export const TextInfo = styled.Text`
 	color: ${colors.secondary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;
 	padding: 10px;
-	font-family: "Roboto";
-`;
-export const TextLink = styled.Text`
-	color: ${colors.secondary};
-	font-size: 10px;
-	font-weight: 700;
-	line-height: 12px;
-	padding: 10px;
-	font-family: "Roboto";
 `;
 
 export const SpacingHeight = styled.View`

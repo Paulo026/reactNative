@@ -1,14 +1,5 @@
 import styled from "styled-components/native";
 import colors from "../../Theme/colors";
-// import { LinearGradient } from "expo-linear-gradient";
-
-// export const Gradient = styled.LinearGradient`
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     top: 0;
-//     height: 30%;
-// `;
 
 export const Container = styled.View`
 	flex: 1;
@@ -25,15 +16,47 @@ export const Logo = styled.Image`
 `;
 
 export const Title = styled.Text`
+	position: absolute;
+	margin-bottom: 555px;
 	font-size: 18px;
 	color: ${colors.secondary};
-	margin: 40px 0;
 	font-weight: 800;
 	line-height: 22px;
 `;
 
+export const SubTitle = styled.Text`
+	width: 300px;
+	font-size: 16px;
+	color: ${colors.secondary};
+	font-weight: bolder;
+	line-height: 22px;
+	text-align: left;
+`;
+
+export const TextSimple = styled.Text`
+	width: 300px;
+	font-size: 10px;
+	color: ${colors.quaternary};
+	font-weight: bolder;
+	line-height: 10px;
+	text-align: center;
+`;
+
 export const WrapperTextInfo = styled.TouchableWithoutFeedback`
 	padding: 10px;
+`;
+
+export const ImagesGroup = styled.View`
+	width: 360px;
+	padding: 50px;
+	align-content: center;
+	flex-direction: row;
+	justify-content: center;
+`;
+export const IconsGroup = styled.View`
+	width: 360px;
+	margin-left: 200px;
+	flex-direction: row;
 `;
 
 export const TextInfo = styled.TouchableOpacity`
@@ -56,4 +79,21 @@ export const TextLink = styled.Text`
 export const SpacingHeight = styled.View`
 	width: 100%;
 	height: ${(props) => props.height || 5};
+`;
+
+export const CategoryLarge = styled.Image`
+	border-radius: 5px;
+	height: 100px;
+	width: 155px;
+	border: 1px solid ${colors.tertiary};
+	margin-left: 10px;
+	margin-right: 10px;
+`;
+
+export const CategoryMedium = styled.Image`
+	border-radius: 5px;
+	height: 73px;
+	width: 60px;
+	opacity: 0.8;
+	margin-top: 25px;
 `;
