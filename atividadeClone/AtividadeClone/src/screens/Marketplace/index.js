@@ -24,6 +24,9 @@ import colors from "../../Theme/colors";
 import category1 from "../../../assets/5.jpg";
 import category2 from "../../../assets/1.jpg";
 import category3 from "../../../assets/3.jpg";
+import NavBar from "../../components/NavBar";
+import  Image  from "../../../assets/people.jpg";
+import { View } from "react-native";
 
 const UserSignUp = () => {
 	const navigation = useNavigation();
@@ -62,11 +65,21 @@ const UserSignUp = () => {
 				<CategoryMedium source={category2} />
 			</ImagesGroup>
 			<SubTitle>Criadores</SubTitle>
+			<View>
+				<Image source={'people.jpg'} /> 
+			</View>
+		 
 			<SpacingHeight height={spacings.extraLarge} />
-
+			
+			<NavBar /> 
 			<Gradient position="bottom" />
 		</Container>
 	);
 };
 
 export default UserSignUp;
+
+
+// Verificar funcionamento NavBar
+
+// Verificar erro de imagem
