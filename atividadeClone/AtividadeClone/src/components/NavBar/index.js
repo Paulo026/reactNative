@@ -26,10 +26,10 @@ const NavBar = () => {
   return (
     <Container>
     <WrapperNavBar>
-    <AntDesign name="home" size={30} color="black" onPress={returnToMarket} />
-    <SimpleLineIcons name="bag" size={30} color="black"  />
-    <AntDesign name="staro" size={30} color="black" />
-    <AntDesign name="shoppingcart" size={30} color="black" />
+    <AntDesign name="home" size={32} color="black" onPress={returnToMarket} />
+    <SimpleLineIcons name="bag" size={32} color="black"  />
+    <AntDesign name="staro" size={32} color="black" />
+    <AntDesign name="shoppingcart" size={32} color="black" />
     </WrapperNavBar>
     </Container>
   )

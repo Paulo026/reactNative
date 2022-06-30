@@ -7,11 +7,14 @@ import {
 	Logo,
 	Title,
 	SubTitle,
-	TextInfo,
 	TextSimple,
 	SpacingHeight,
 	WrapperTextInfo,
 	TextLink,
+	People,
+	PeopleWrapper,
+	InfoWrapper,	
+	TextImage,
 } from "./styles";
 import spacings from "../../Theme/spacings";
 import Gradient from "../../components/Gradient";
@@ -25,7 +28,12 @@ import category1 from "../../../assets/5.jpg";
 import category2 from "../../../assets/1.jpg";
 import category3 from "../../../assets/3.jpg";
 import NavBar from "../../components/NavBar";
-import  Image  from "../../../assets/people.jpg";
+import  alex  from "../../../assets/Alex.png";
+import  alie  from "../../../assets/Alie.png";
+import carlos from "../../../assets/Carlos.png";
+import  beatriz  from "../../../assets/Beatriz.png";
+
+
 import { View } from "react-native";
 
 const UserSignUp = () => {
@@ -54,7 +62,7 @@ const UserSignUp = () => {
 				Categorias
 				<Ionicons name="add" size={20} color={`${colors.secondary}`} />
 			</SubTitle>
-			<SpacingHeight height={spacings.extraLarge} />
+			{/* <SpacingHeight height={spacings.extraLarge} /> */}
 			<IconsGroup>
 				<Feather name="trash" size={20} color={`${colors.quinternary}`} />
 				<Feather name="edit-3" size={20} color={`${colors.secondary}`} />
@@ -64,10 +72,25 @@ const UserSignUp = () => {
 				<CategoryLarge source={category1} style={{ elevation: 5 }} />
 				<CategoryMedium source={category2} />
 			</ImagesGroup>
+			<InfoWrapper>
+				<TextImage>Tec3</TextImage>
+				<TextImage>Tec1</TextImage>
+				<TextImage>Tec2</TextImage>			
+			</InfoWrapper>
+			<SpacingHeight height={spacings.extraLarge} />
 			<SubTitle>Criadores</SubTitle>
-			<View>
-				<Image source={'people.jpg'} /> 
-			</View>
+			<PeopleWrapper>
+				<People source={alex} /> 
+				<People source={beatriz} />
+				<People source={carlos} />
+				<People source={alie} />				
+			</PeopleWrapper>
+			<InfoWrapper>
+				<TextImage>Alex</TextImage>
+				<TextImage>Beatriz</TextImage>
+				<TextImage>Carlos</TextImage>
+				<TextImage>Alie</TextImage>
+			</InfoWrapper>
 		 
 			<SpacingHeight height={spacings.extraLarge} />
 			

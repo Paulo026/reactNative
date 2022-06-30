@@ -1,12 +1,13 @@
 import styled from "styled-components/native";
 import colors from "../../Theme/colors";
+import { TextInfo } from './styles';
 
 export const Container = styled.View`
 	flex: 1;
 	justify-content: center;
 	background-color: ${colors.tertiary};
 	align-items: center;
-	padding: 40px;
+	padding: 50px;
 `;
 
 export const Logo = styled.Image`
@@ -48,25 +49,28 @@ export const WrapperTextInfo = styled.TouchableWithoutFeedback`
 
 export const ImagesGroup = styled.View`
 	width: 360px;
-	padding: 50px;
+	height: 100px;
+	/* padding: 50px; */
 	align-content: center;
 	flex-direction: row;
 	justify-content: center;
 `;
 export const IconsGroup = styled.View`
 	width: 360px;
-	margin-left: 200px;
+	margin-left: 450px;
 	flex-direction: row;
+
 `;
 
-export const TextInfo = styled.TouchableOpacity`
-	color: ${colors.secondary};
-	font-size: 10px;
-	font-weight: 700;
-	line-height: 12px;
-	padding: 10px;
-	font-family: "Roboto";
-`;
+// export const TextInfo = styled.TouchableOpacity`
+// 	color: ${colors.secondary};
+// 	font-size: 10px;
+// 	font-weight: 700;
+// 	line-height: 12px;
+// 	padding: 10px;
+// 	font-family: "Roboto";
+// `;
+
 export const TextLink = styled.Text`
 	color: ${colors.secondary};
 	font-size: 10px;
@@ -97,3 +101,32 @@ export const CategoryMedium = styled.Image`
 	opacity: 0.8;
 	margin-top: 25px;
 `;
+
+export const PeopleWrapper = styled.View`
+	width: 360px;
+	height: 60px;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: center;
+`;
+
+export const InfoWrapper = styled.View`
+	flex-direction: row;
+	gap: 50px;
+	justify-content: center;
+`;
+
+export const TextImage = styled.Text`
+	color: ${colors.secondary}
+
+`;
+
+
+export const People = styled.Image`
+	border: 2px solid ${colors.secondary};
+	border-radius: 50%;
+	width:65px;
+	height: 65px;
+`;
+
+
