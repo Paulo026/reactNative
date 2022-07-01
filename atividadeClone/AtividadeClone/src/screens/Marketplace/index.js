@@ -15,6 +15,7 @@ import {
 	PeopleWrapper,
 	InfoWrapper,	
 	TextImage,
+	InfoWrapper2,
 } from "./styles";
 import spacings from "../../Theme/spacings";
 import Gradient from "../../components/Gradient";
@@ -43,6 +44,15 @@ const UserSignUp = () => {
 		navigation.navigate("Cadastro de Usuário feito com sucesso");
 	}
 
+	function openCategoryChange() {
+		navigation.navigate("Alterar Categoria")
+	}
+
+	
+	function openCategoryCreate() {
+		navigation.navigate("Cadastro de Categoria")
+	}
+
 	return (
 		<Container>
 			<Gradient position="top" />
@@ -60,23 +70,23 @@ const UserSignUp = () => {
 			<SpacingHeight height={spacings.extraLarge} />
 			<SubTitle>
 				Categorias
-				<Ionicons name="add" size={20} color={`${colors.secondary}`} />
+				<Ionicons name="add" size={20} color={`${colors.secondary}`} onPress={openCategoryCreate} />
 			</SubTitle>
 			{/* <SpacingHeight height={spacings.extraLarge} /> */}
 			<IconsGroup>
 				<Feather name="trash" size={20} color={`${colors.quinternary}`} />
-				<Feather name="edit-3" size={20} color={`${colors.secondary}`} />
+				<Feather name="edit-3" size={20} color={`${colors.secondary}`} onPress={openCategoryChange} />
 			</IconsGroup>
 			<ImagesGroup>
 				<CategoryMedium source={category3} />
 				<CategoryLarge source={category1} style={{ elevation: 5 }} />
 				<CategoryMedium source={category2} />
 			</ImagesGroup>
-			<InfoWrapper>
+			<InfoWrapper2>
 				<TextImage>Tec3</TextImage>
 				<TextImage>Tec1</TextImage>
 				<TextImage>Tec2</TextImage>			
-			</InfoWrapper>
+			</InfoWrapper2>
 			<SpacingHeight height={spacings.extraLarge} />
 			<SubTitle>Criadores</SubTitle>
 			<PeopleWrapper>
@@ -103,6 +113,5 @@ const UserSignUp = () => {
 export default UserSignUp;
 
 
-// Verificar funcionamento NavBar
 
 // Verificar erro de imagem

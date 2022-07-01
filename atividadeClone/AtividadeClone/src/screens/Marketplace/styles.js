@@ -57,7 +57,7 @@ export const ImagesGroup = styled.View`
 `;
 export const IconsGroup = styled.View`
 	width: 360px;
-	margin-left: 450px;
+	margin-left: 435px;
 	flex-direction: row;
 
 `;
@@ -129,4 +129,8 @@ export const People = styled.Image`
 	height: 65px;
 `;
 
-
+export const InfoWrapper2 = styled.View`
+	flex-direction: row;
+	gap: 90px;
+	justify-content: center;
+`;

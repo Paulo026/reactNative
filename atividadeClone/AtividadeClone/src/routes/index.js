@@ -6,6 +6,8 @@ import PasswordCreate from "../Screens/PasswordCreate";
 import PasswordRecovery from "../Screens/PasswordRecovery";
 import UserSignUp from "../Screens/UserSignUp";
 import UserSignUpSucess from "../Screens/UserSignUpSucess";
+import CategoryChange from "../screens/CategoryChange";
+import CategoryCreate from "../screens/CategoryChange";
 
 const Stack = createNativeStackNavigator();
 
@@ -55,6 +57,21 @@ const Routes = () => {
 					headerShown: false,
 				}}
 			/>
+			<Stack.Screen
+				name="Alterar Categoria"
+				component={CategoryChange}
+				options={{
+					headerShown: false,
+				}}
+			/>
+			<Stack.Screen
+				name="Cadastro de Categoria"
+				component={CategoryCreate}
+				options={{
+					headerShown: false,
+				}}
+			/>
+
 		</Stack.Navigator>
 	);
 };

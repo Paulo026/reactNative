@@ -5,7 +5,7 @@ import colors from "../../theme/colors";
 export const Container = styled.View`
     width: 360px;
     height: 38px;
-    /* background-color: #0ff; */
+    /* background-color: ${colors.quaternary}; */
     opacity: 0.3;
     z-index: 1;   
     position: absolute;
@@ -15,7 +15,7 @@ export const Container = styled.View`
 export const WrapperNavBar = styled.View`
 height: 38px;
 width: 360px;
-background-color: rgba(209, 209, 209, 0.50);
+/* background-color: rgba(209, 209, 209, 0.50); */
 opacity:1;
 height: 32px;
 width: 32px;
