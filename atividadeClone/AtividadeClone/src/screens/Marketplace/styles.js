@@ -118,9 +118,7 @@ export const InfoWrapper = styled.View`
 
 export const TextImage = styled.Text`
 	color: ${colors.secondary}
-
 `;
-
 
 export const People = styled.Image`
 	border: 2px solid ${colors.secondary};
