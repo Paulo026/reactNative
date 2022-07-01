@@ -35,7 +35,6 @@ import carlos from "../../../assets/Carlos.png";
 import  beatriz  from "../../../assets/Beatriz.png";
 
 
-import { View } from "react-native";
 
 const UserSignUp = () => {
 	const navigation = useNavigation();

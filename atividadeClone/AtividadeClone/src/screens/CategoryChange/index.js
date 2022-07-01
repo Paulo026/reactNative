@@ -5,12 +5,12 @@ import Gradient from "../../components/Gradient";
 import ExitButton from "../../components/ExitButton";
 import spacings from "../../Theme/spacings";
 import { useNavigation } from "@react-navigation/native";
-import SmallLogo from './../../components/SmallLogo/index';
+import SmallLogo from '../../components/SmallLogo/index';
 import { Feather } from '@expo/vector-icons';
 import colors from "../../Theme/colors";
 
 
-const CategoryCreate = () => {
+const CategoryChange = () => {
 	const navigation = useNavigation();
 
 	function openScreen() {
@@ -24,10 +24,10 @@ const CategoryCreate = () => {
 			<SmallLogo />
 			<SpacingHeight height={spacings.extraLarge} />
 
-			<Title>Cadastro<br/>de Categoria</Title>
-			<Input placeholder={"Nome"} />
+			<Title>Alterar<br/>Categoria</Title>
+			<Input placeholder={"Tec1"} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Input placeholder={"Imagem"} />
+			<Input placeholder={"imagem5.png"} />
 			<WrapperTextInfo>
 					<TextLink>Selecionar Imagem
 					<Feather name="upload" size={15} color={`${colors.secondary}`} style={{marginLeft: "7px"}} />
@@ -35,11 +35,11 @@ const CategoryCreate = () => {
 			</WrapperTextInfo>
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary>
-				<TextButton onPress={openScreen}>CADASTRAR</TextButton>
+				<TextButton onPress={openScreen}>ALTERAR</TextButton>
 			</ButtonPrimary>
 			<Gradient position="bottom" />
 		</Container>
 	);
 };
 
-export default CategoryCreate;
+export default CategoryChange;

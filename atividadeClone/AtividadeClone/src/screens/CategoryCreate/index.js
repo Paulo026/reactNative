@@ -10,7 +10,7 @@ import { Feather } from '@expo/vector-icons';
 import colors from "../../Theme/colors";
 
 
-const CategoryChange = () => {
+const CategoryCreate = () => {
 	const navigation = useNavigation();
 
 	function openScreen() {
@@ -24,10 +24,10 @@ const CategoryChange = () => {
 			<SmallLogo />
 			<SpacingHeight height={spacings.extraLarge} />
 
-			<Title>Alterar<br/>Categoria</Title>
-			<Input placeholder={"Tec1"} />
+			<Title>Cadastro{'\n'}de Categoria</Title>
+			<Input placeholder={"Nome"} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Input placeholder={"imagem5.png"} />
+			<Input placeholder={"Imagem"} />
 			<WrapperTextInfo>
 					<TextLink>Selecionar Imagem
 					<Feather name="upload" size={15} color={`${colors.secondary}`} style={{marginLeft: "7px"}} />
@@ -35,11 +35,11 @@ const CategoryChange = () => {
 			</WrapperTextInfo>
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary>
-				<TextButton onPress={openScreen}>ALTERAR</TextButton>
+				<TextButton onPress={openScreen}>CADASTRAR</TextButton>
 			</ButtonPrimary>
 			<Gradient position="bottom" />
 		</Container>
 	);
 };
 
-export default CategoryChange;
+export default CategoryCreate;
