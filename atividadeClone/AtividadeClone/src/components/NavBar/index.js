@@ -19,9 +19,9 @@ const NavBar = () => {
     // }
 
     
-    // function returnToCart() {
-    //     navigation.navigate("Cart")
-    // }
+    function returnToProduct() {
+        navigation.navigate("Produtos")
+    }
 
   return (
     <Container>
@@ -29,10 +29,10 @@ const NavBar = () => {
     <AntDesign name="home" size={32} color="black" onPress={returnToMarket} />
     <SimpleLineIcons name="bag" size={32} color="black"  />
     <AntDesign name="staro" size={32} color="black" />
-    <AntDesign name="shoppingcart" size={32} color="black" />
+    <AntDesign name="shoppingcart" size={32} color="black"  onPress={returnToProduct}/>
     </WrapperNavBar>
     </Container>
-  )
-}
+  );
+};
 
 export default NavBar;

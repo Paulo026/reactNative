@@ -7,10 +7,11 @@ import PasswordRecovery from "../Screens/PasswordRecovery";
 import UserSignUp from "../Screens/UserSignUp";
 import UserSignUpSucess from "../Screens/UserSignUpSucess";
 import CategoryChange from "../screens/CategoryChange";
-import CategoryCreate from "../screens/CategoryChange";
+import CategoryCreate from "../screens/CategoryCreate";
+import Product from "../components/Product";
 
 const Stack = createNativeStackNavigator();
-
+ 
 const Routes = () => {
 	return (
 		<Stack.Navigator>
@@ -72,8 +73,16 @@ const Routes = () => {
 				}}
 			/>
 
+			<Stack.Screen
+				name="Produtos"
+				component={Product}
+				options={{
+					headerShown: false,
+				}}
+			/>
+
 		</Stack.Navigator>
-	);
+	)
 };
 
 export default Routes;
