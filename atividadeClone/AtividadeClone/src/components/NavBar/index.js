@@ -7,7 +7,7 @@ const NavBar = () => {
     const navigation = useNavigation();
 
     function returnToMarket() {
-        navigation.navigate("MarketPlace");
+        navigation.navigate("Marketplace");
     }
 
     // function returnToBag() {
