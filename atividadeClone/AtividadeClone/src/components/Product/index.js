@@ -5,12 +5,21 @@ import { Container, Title } from "../../screens/Marketplace/styles";
 import SmallLogo from "../../components/SmallLogo";
 import ExitButton from "../../components/ExitButton";
 import NavBar from "../../components/NavBar";
-import { CardWrapper, CardText, ProductImage, CardBotton, NumberButtonOne, NumberButtonPlus } from "../CustomBoxCard/styles";
-import { FontAwesome5 } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons'; 
-import { Entypo } from '@expo/vector-icons'; 
-import { Octicons } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {
+	CardWrapper,
+	CardText,
+	ProductImage,
+	CardBotton,
+	NumberButtonOne,
+	NumberButtonPlus,
+	IconsGroup,
+} from "../CustomBoxCard/styles";
+import { AntDesign } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import colors from "../../theme/colors";
+import { Feather } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const Card = [
 	{
@@ -20,7 +29,7 @@ const Card = [
 		preco: "Preço R$ 25,00",
 		estoque: "10 unidades em estoque",
 		quantidade: "2",
-		estrela: EstrelaVazia,
+		estrela: <AntDesign name="staro" size={18} color="#120a8f" />,
 	},
 
 	{
@@ -30,7 +39,7 @@ const Card = [
 		preco: "Preço R$ 50,00",
 		estoque: "1 unidade  em estoque",
 		quantidade: "0",
-		estrela:EstrelaCheia,
+		estrela: <AntDesign name="star" size={18} color="#120a8f" />,
 	},
 
 	{
@@ -40,7 +49,7 @@ const Card = [
 		preco: "Preço R$ 30,00",
 		estoque: "5 Unidades em estoque",
 		quantidade: "0",
-		estrela: EstrelaVazia,
+		estrela: <AntDesign name="staro" size={18} color="#120a8f" />,
 	},
 
 	{
@@ -50,7 +59,7 @@ const Card = [
 		preco: "Preço R$ 100,00",
 		estoque: "15 Unidades em estoque",
 		quantidade: "1",
-		estrela: EstrelaVazia,
+		estrela: <AntDesign name="staro" size={18} color="#120a8f" />,
 	},
 
 	{
@@ -60,7 +69,7 @@ const Card = [
 		preco: "Preço R$ 40,00",
 		estoque: "20 Unidades em estoque",
 		quantidade: "1",
-		estrela: EstrelaCheia,
+		estrela: <AntDesign name="star" size={18} color="#120a8f" />,
 	},
 
 	{
@@ -70,20 +79,9 @@ const Card = [
 		preco: "Preço R$ 70,00",
 		estoque: "8 Unidades em estoque",
 		quantidade: "0",
-		estrela:EstrelaCheia,
+		estrela: <AntDesign name="star" size={18} color="#120a8f" />,
 	},
 ];
-const EstrelaCheia = () => {
-	return(
-		<AntDesign name="star" size={24} color="black" />
-	)
-};
-
-const EstrelaVazia = () => {
-	return(
-		<AntDesign name="staro" size={24} color="black" />
-	)
-};
 
 const ListCard = ({ imagem, nome, preco, estoque, quantidade, estrela }) => (
 	<CardWrapper>
@@ -95,17 +93,27 @@ const ListCard = ({ imagem, nome, preco, estoque, quantidade, estrela }) => (
 
 		<CardText>{estoque}</CardText>
 		<CardBotton>
-			<NumberButtonPlus><Entypo name="minus" size={10} color="black" /></NumberButtonPlus>
+			<NumberButtonPlus>
+				<Entypo name="minus" size={10} color="black" />
+			</NumberButtonPlus>
 			<NumberButtonOne>
-		<CardText>{quantidade}</CardText>
+				<CardText>{quantidade}</CardText>
 			</NumberButtonOne>
-			<NumberButtonPlus><AntDesign name="plus" size={10} color="black" /></NumberButtonPlus>
-			<MaterialCommunityIcons name="check-bold" size={18} color="black" style={{marginLeft:15}}/>
-			<View>
-			{estrela} 
-			</View>
-			{/* style={{marginRight:10}}/> */}
+			<NumberButtonPlus>
+				<AntDesign name="plus" size={10} color="black" />
+			</NumberButtonPlus>
+			<MaterialCommunityIcons
+				name="check-bold"
+				size={18}
+				color="#120a8f"
+				style={{ marginLeft: 15 }}
+			/>
+			{estrela}
 		</CardBotton>
+		<IconsGroup>
+			<Feather name="trash" size={15} color={`${colors.quinternary}`} />
+			<Feather name="edit-3" size={15} color={`${colors.secondary}`} />
+		</IconsGroup>
 	</CardWrapper>
 );
 
@@ -126,6 +134,13 @@ const Product = () => {
 			<Title>Produtos</Title>
 			<ExitButton />
 			<SmallLogo />
+
+			<Ionicons
+				name="add"
+				size={20}
+				color={`${colors.secondary}`}
+				style={{ marginRight: 280 }}
+			/>
 			<View>
 				<FlatList
 					data={Card}
@@ -134,7 +149,7 @@ const Product = () => {
 					numColumns={2}
 				/>
 			</View>
-			<NavBar /> 
+			<NavBar />
 			<Gradient position="bottom" />
 		</Container>
 	);

@@ -26,19 +26,23 @@ export const NumberButtonOne = styled.View`
     width: 33px;
     border: 2px solid ${colors.primary};
     flex-direction: row;
-    
+    justify-content: center;
 `;
+
 export const NumberButtonPlus = styled.View`
     height: 20px;
     width: 18px;
     border: 2px solid ${colors.primary};
     flex-direction: row;
+    justify-content: center;
+    padding-top: 3px;
 `;
 
 export const CardText = styled.Text`
     color: ${colors.secondary};
     font-size: 10px;
     margin-left: 3px;
+    text-align: center;
 `;
 
 export const ProductImage = styled.Image`
@@ -48,6 +52,13 @@ export const ProductImage = styled.Image`
     margin-top:5px;
     border-radius:5px;
 `;
+
+export const IconsGroup = styled.View`
+	width: 360px;
+	/* margin-left: 435px; */
+	flex-direction: row;
+    margin-top: 5px;
+    `;
 
 
 
