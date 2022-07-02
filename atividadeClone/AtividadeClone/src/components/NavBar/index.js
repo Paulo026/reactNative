@@ -14,9 +14,9 @@ const NavBar = () => {
     //     navigation.navigate("Bag")     Criar Telas
     // }
 
-    // function returnToFavorite() {
-    //     navigation.navigate("Favorite")
-    // }
+    function returnToFavorite() {
+        navigation.navigate("Favoritos")
+    }
 
     
     function returnToProduct() {
@@ -28,7 +28,7 @@ const NavBar = () => {
     <WrapperNavBar>
     <AntDesign name="home" size={32} color="black" onPress={returnToMarket} />
     <SimpleLineIcons name="bag" size={32} color="black"  />
-    <AntDesign name="staro" size={32} color="black" />
+    <AntDesign name="staro" size={32} color="black" onPress={returnToFavorite} />
     <AntDesign name="shoppingcart" size={32} color="black"  onPress={returnToProduct}/>
     </WrapperNavBar>
     </Container>
