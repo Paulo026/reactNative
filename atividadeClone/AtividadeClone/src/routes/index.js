@@ -9,9 +9,10 @@ import UserSignUpSucess from "../Screens/UserSignUpSucess";
 import CategoryChange from "../screens/CategoryChange";
 import CategoryCreate from "../screens/CategoryCreate";
 import Product from "../components/Product";
+import Favorite from './../screens/Favorite';
 
 const Stack = createNativeStackNavigator();
- 
+
 const Routes = () => {
 	return (
 		<Stack.Navigator>
@@ -76,6 +77,14 @@ const Routes = () => {
 			<Stack.Screen
 				name="Produtos"
 				component={Product}
+				options={{
+					headerShown: false,
+				}}
+			/>
+
+			<Stack.Screen
+				name="Favoritos"
+				component={Favorite}
 				options={{
 					headerShown: false,
 				}}
