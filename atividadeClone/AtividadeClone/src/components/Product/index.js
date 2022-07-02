@@ -8,6 +8,8 @@ import NavBar from "../../components/NavBar";
 import {
 	CardWrapper,
 	CardText,
+	CardGroup,
+	CardTextBold,
 	ProductImage,
 	CardBotton,
 	NumberButtonOne,
@@ -86,11 +88,8 @@ const Card = [
 const ListCard = ({ imagem, nome, preco, estoque, quantidade, estrela }) => (
 	<CardWrapper>
 		<ProductImage source={imagem} />
-
-		<CardText>{nome}</CardText>
-
-		<CardText>{preco}</CardText>
-
+		<CardTextBold>{nome}</CardTextBold>
+		<CardTextBold>{preco}</CardTextBold>
 		<CardText>{estoque}</CardText>
 		<CardBotton>
 			<NumberButtonPlus>
@@ -111,8 +110,8 @@ const ListCard = ({ imagem, nome, preco, estoque, quantidade, estrela }) => (
 			{estrela}
 		</CardBotton>
 		<IconsGroup>
-			<Feather name="trash" size={15} color={`${colors.quinternary}`} />
-			<Feather name="edit-3" size={15} color={`${colors.secondary}`} />
+			<Feather name="trash" size={12} color={`${colors.quinternary}`} />
+			<Feather name="edit-3" size={12} color={`${colors.secondary}`} />
 		</IconsGroup>
 	</CardWrapper>
 );
@@ -134,21 +133,20 @@ const Product = () => {
 			<Title>Produtos</Title>
 			<ExitButton />
 			<SmallLogo />
-
 			<Ionicons
 				name="add"
-				size={20}
+				size={18}
 				color={`${colors.secondary}`}
-				style={{ marginRight: 280 }}
+				style={{ marginRight: 280, marginTop: -50 }}
 			/>
-			<View>
+			<CardGroup>
 				<FlatList
 					data={Card}
 					renderItem={list}
 					keyExtractor={(item) => item.id}
 					numColumns={2}
 				/>
-			</View>
+			</CardGroup>
 			<NavBar />
 			<Gradient position="bottom" />
 		</Container>

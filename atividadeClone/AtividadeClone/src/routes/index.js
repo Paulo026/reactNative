@@ -10,6 +10,9 @@ import CategoryChange from "../screens/CategoryChange";
 import CategoryCreate from "../screens/CategoryCreate";
 import Product from "../components/Product";
 import Favorite from './../screens/Favorite';
+import Purchase from "../screens/Purchase";
+import ProductCreate from "../screens/ProductCreate";
+import ProductChange from "../screens/ProductChange";
 
 const Stack = createNativeStackNavigator();
 
@@ -74,14 +77,7 @@ const Routes = () => {
 				}}
 			/>
 
-			<Stack.Screen
-				name="Produtos"
-				component={Product}
-				options={{
-					headerShown: false,
-				}}
-			/>
-
+			
 			<Stack.Screen
 				name="Favoritos"
 				component={Favorite}
@@ -89,6 +85,29 @@ const Routes = () => {
 					headerShown: false,
 				}}
 			/>
+
+<Stack.Screen
+				name="Carrinho"
+				component={Purchase}
+				options={{
+					headerShown: false,
+				}}
+			/>
+
+<Stack.Screen
+                name="Cadastro de Produto"
+                component={ProductCreate}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="Alterar Produto"
+                component={ProductChange}
+                options={{
+                    headerShown: false,
+                }}
+            />
 
 		</Stack.Navigator>
 	)

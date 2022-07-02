@@ -5,6 +5,7 @@ import ExitButton from "../../components/ExitButton";
 import NavBar from "../../components/NavBar";
 import { Container, CardWrapper, Title, FavoriteImage, CardTextFavorite, TextView} from './styles';
 import { View, FlatList } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 const Card = [
   {
@@ -34,19 +35,17 @@ const Card = [
 
 const ListCard = ({ imagem, nome, preco, estoque}) => (
   <CardWrapper>
-    <FavoriteImage source={imagem} />
+      <AntDesign name="close" size={15} color="black" style={{marginLeft:305, marginTop:5}}/>
+      <FavoriteImage source={imagem} />
       <TextView>
-    <CardTextFavorite>{nome}</CardTextFavorite>
+    <CardTextFavorite style={{fontWeight:"bold"}}>{nome}{"\n"}</CardTextFavorite>
 
-    <CardTextFavorite>{preco}</CardTextFavorite>
+    <CardTextFavorite style={{fontWeight:"bold"}}>{preco}{"\n"}</CardTextFavorite>
 
     <CardTextFavorite>{estoque}</CardTextFavorite>
     </TextView>
   </CardWrapper>
 );
-
-
-
 
 const Favorite = () => {
   const list = ({ item }) => (
@@ -78,6 +77,6 @@ const Favorite = () => {
     </Container>
 
   )
-}
+};
 
 export default Favorite;

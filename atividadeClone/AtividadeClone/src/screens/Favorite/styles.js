@@ -21,34 +21,33 @@ export const Title = styled.Text`
 `;
 
 export const CardWrapper = styled.View `
-   width: 400px;
-   height: 135px;   
+   width: 330px;
+   height: 95px;   
    background-color: ${colors.tertiary};
    border-radius:10px;
    border: 2px solid ${colors.primary};
    margin: 10px 10px 10px 10px;
-  
-
 `;
 
 export const FavoriteImage = styled.Image`
     width: 140px;
     height: 80px;
     align-self:center;
-    margin-top:5px;
+    margin-top:-15px;
     border-radius:5px;
     align-self: flex-start;
-    margin-left: 5px;
+    margin-left:5px;
 `;
 
 export const CardTextFavorite = styled.Text`
     color: ${colors.secondary};
-    font-size: 10px;
-    text-align: center;
-      
+    font-size: 12px;
+    column-count: 2;
 `;
 
 export const TextView = styled.Text`
-   margin-top: 5px;
-
+   margin-left: 150px;
+   margin-top: -70px;
+  font-size: 20px;
+ line-height: 10px;
 `;
