@@ -22,6 +22,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../../theme/colors";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Card = [
 	{
@@ -85,36 +86,51 @@ const Card = [
 	},
 ];
 
-const ListCard = ({ imagem, nome, preco, estoque, quantidade, estrela }) => (
-	<CardWrapper>
-		<ProductImage source={imagem} />
-		<CardTextBold>{nome}</CardTextBold>
-		<CardTextBold>{preco}</CardTextBold>
-		<CardText>{estoque}</CardText>
-		<CardBotton>
-			<NumberButtonPlus>
-				<Entypo name="minus" size={10} color="black" />
-			</NumberButtonPlus>
-			<NumberButtonOne>
-				<CardText>{quantidade}</CardText>
-			</NumberButtonOne>
-			<NumberButtonPlus>
-				<AntDesign name="plus" size={10} color="black" />
-			</NumberButtonPlus>
-			<MaterialCommunityIcons
-				name="check-bold"
-				size={18}
-				color="#120a8f"
-				style={{ marginLeft: 15 }}
-			/>
-			{estrela}
-		</CardBotton>
-		<IconsGroup>
-			<Feather name="trash" size={12} color={`${colors.quinternary}`} />
-			<Feather name="edit-3" size={12} color={`${colors.secondary}`} />
-		</IconsGroup>
-	</CardWrapper>
-);
+const ListCard = ({ imagem, nome, preco, estoque, quantidade, estrela }) => {
+	const navigation = useNavigation();
+
+	function openProductChange() {
+		if (nome === "Produto 1") {
+			navigation.navigate("Alterar Produto");
+		}
+	}
+
+	return (
+		<CardWrapper>
+			<ProductImage source={imagem} />
+			<CardTextBold>{nome}</CardTextBold>
+			<CardTextBold>{preco}</CardTextBold>
+			<CardText>{estoque}</CardText>
+			<CardBotton>
+				<NumberButtonPlus>
+					<Entypo name="minus" size={10} color="black" />
+				</NumberButtonPlus>
+				<NumberButtonOne>
+					<CardText>{quantidade}</CardText>
+				</NumberButtonOne>
+				<NumberButtonPlus>
+					<AntDesign name="plus" size={10} color="black" />
+				</NumberButtonPlus>
+				<MaterialCommunityIcons
+					name="check-bold"
+					size={18}
+					color="#120a8f"
+					style={{ marginLeft: 15 }}
+				/>
+				{estrela}
+			</CardBotton>
+			<IconsGroup>
+				<Feather name="trash" size={12} color={`${colors.quinternary}`} />
+				<Feather
+					name="edit-3"
+					size={12}
+					color={`${colors.secondary}`}
+					onPress={openProductChange}
+				/>
+			</IconsGroup>
+		</CardWrapper>
+	);
+};
 
 const Product = () => {
 	const list = ({ item }) => (
@@ -127,6 +143,16 @@ const Product = () => {
 			estrela={item.estrela}
 		/>
 	);
+
+	const navigation = useNavigation();
+
+	function openProductCreate() {
+		navigation.navigate("Cadastro de Produto");
+	}
+
+	function openProductChange() {
+		navigation.navigate("Alterar Produto");
+	}
 	return (
 		<Container>
 			<Gradient position="top" />
@@ -138,12 +164,12 @@ const Product = () => {
 				size={18}
 				color={`${colors.secondary}`}
 				style={{ marginRight: 280, marginTop: -50 }}
+				onPress={openProductCreate}
 			/>
 			<CardGroup>
 				<FlatList
 				showsVerticalScrollIndicator={false}
-				showsHorizontalScrollIndicator={false} //workaround?
-			   
+                showsHorizontalScrollIndicator={false} //workaround?
 					data={Card}
 					renderItem={list}
 					keyExtractor={(item) => item.id}

@@ -24,7 +24,7 @@ const CategoryChange = () => {
 			<SmallLogo />
 			<SpacingHeight height={spacings.extraLarge} />
 
-			<Title>Alterar<br/>Categoria</Title>
+			<Title>Alterar{"\n"}Categoria</Title>
 			<Input placeholder={"Tec1"} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<Input placeholder={"imagem5.png"} />

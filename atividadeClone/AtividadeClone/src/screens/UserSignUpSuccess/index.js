@@ -5,7 +5,7 @@ import Gradient from "../../components/Gradient";
 import spacings from "../../Theme/spacings";
 import { useNavigation } from "@react-navigation/native";
 
-const UserSignUpSucess = () => {
+const UserSignUpSuccess = () => {
 	const navigation = useNavigation();
 
 	function openScreen() {
@@ -31,4 +31,4 @@ const UserSignUpSucess = () => {
 	);
 };
 
-export default UserSignUpSucess;
+export default UserSignUpSuccess;

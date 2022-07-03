@@ -5,7 +5,7 @@ import Marketplace from "../Screens/Marketplace";
 import PasswordCreate from "../Screens/PasswordCreate";
 import PasswordRecovery from "../Screens/PasswordRecovery";
 import UserSignUp from "../Screens/UserSignUp";
-import UserSignUpSucess from "../Screens/UserSignUpSucess";
+import UserSignUpSuccess from "../screens/UserSignUpSuccess";
 import CategoryChange from "../screens/CategoryChange";
 import CategoryCreate from "../screens/CategoryCreate";
 import Product from "../components/Product";
@@ -13,6 +13,8 @@ import Favorite from './../screens/Favorite';
 import Purchase from "../screens/Purchase";
 import ProductCreate from "../screens/ProductCreate";
 import ProductChange from "../screens/ProductChange";
+import PasswordSuccess from "../screens/PasswordSuccess";
+import ShoppingSuccess from  "../screens/ShoppingSuccess";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,7 +37,7 @@ const Routes = () => {
 			/>
 			<Stack.Screen
 				name="Cadastro de Usuário feito com sucesso"
-				component={UserSignUpSucess}
+				component={UserSignUpSuccess}
 				options={{
 					headerShown: false,
 				}}
@@ -43,6 +45,14 @@ const Routes = () => {
 			<Stack.Screen
 				name="Criar Senha"
 				component={PasswordCreate}
+				options={{
+					headerShown: false,
+				}}
+			/>
+
+			<Stack.Screen
+				name="Senha alterada com sucesso"
+				component={PasswordSuccess}
 				options={{
 					headerShown: false,
 				}}
@@ -112,6 +122,14 @@ const Routes = () => {
 			<Stack.Screen
 				name="Produtos"
 				component={Product}
+				options={{
+					headerShown: false,
+				}}
+			/>
+
+<Stack.Screen
+				name="Compra efetuada com sucesso"
+				component={ShoppingSuccess}
 				options={{
 					headerShown: false,
 				}}
