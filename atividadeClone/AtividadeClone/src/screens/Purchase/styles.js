@@ -14,7 +14,7 @@ padding: 50px;
 export const Title = styled.Text`
 	position: absolute;
 	margin-bottom: 555px;
-	font-size: 18px;
+	font-size: 15px;
 	color: ${colors.secondary};
 	font-weight: 800;
 	line-height: 22px;
@@ -47,7 +47,9 @@ export const PurchaseWrapper = styled.View`
 export const ButtonWrapper = styled.View`
 width: 300px;
 height:40px;
+margin: 50px 10px 10px 10px;
 flex-direction: row;
+gap: 40px;  // Usei o gap para separar os botoes
 `;
 
 export const ButtonPrimary = styled.View`
@@ -60,7 +62,7 @@ export const ButtonPrimary = styled.View`
 	border-radius: 5px;
 	align-self: center;
 	margin-top: 20px;
-   margin-left: 10px;
+  margin-left: 10px;
 `;
 
 export const TextButton = styled.Text`
@@ -75,13 +77,21 @@ export const TextButton = styled.Text`
 `;
 
 export const TextInfo = styled.Text`
-  font-size: 12px;
+  font-size: 13px;
   color: ${colors.secondary};
   font-weight: 800;
   font-family: 'sans-serif';
-`;
+  padding-top: 5px;
+  padding-right: 7px;
+  margin-right: 13px;
+  height: 50px;
+  width: 70px;
+  text-align: center;
+`; 
+
+// Verificar tamanho da letra fontSize
 
 export const SpacingHeight = styled.View`
     width: 100%;
-    height: ${(props) => props.height || 5 };
+    height: ${(props) => props.height || 5};
 `;

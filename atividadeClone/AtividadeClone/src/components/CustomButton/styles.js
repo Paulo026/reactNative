@@ -12,6 +12,7 @@ export const ButtonPrimary = styled.TouchableOpacity`
 	border-radius: 5px;
 	align-self: center;
 	margin-top: 20px;
+	
 `;
 
 export const TextButton = styled.Text`
@@ -21,5 +22,6 @@ export const TextButton = styled.Text`
 	font-size: 12px;
 	font-weight: 800;
 	font-style: bolder;
-	line-height: 15px;
+	line-height: 10px;
+	
 `;

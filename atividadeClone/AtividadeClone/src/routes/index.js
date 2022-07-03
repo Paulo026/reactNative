@@ -77,7 +77,7 @@ const Routes = () => {
 				}}
 			/>
 
-			
+
 			<Stack.Screen
 				name="Favoritos"
 				component={Favorite}
@@ -86,7 +86,7 @@ const Routes = () => {
 				}}
 			/>
 
-<Stack.Screen
+			<Stack.Screen
 				name="Carrinho"
 				component={Purchase}
 				options={{
@@ -94,20 +94,28 @@ const Routes = () => {
 				}}
 			/>
 
-<Stack.Screen
-                name="Cadastro de Produto"
-                component={ProductCreate}
-                options={{
-                    headerShown: false,
-                }}
-            />
-            <Stack.Screen
-                name="Alterar Produto"
-                component={ProductChange}
-                options={{
-                    headerShown: false,
-                }}
-            />
+			<Stack.Screen
+				name="Cadastro de Produto"
+				component={ProductCreate}
+				options={{
+					headerShown: false,
+				}}
+			/>
+			<Stack.Screen
+				name="Alterar Produto"
+				component={ProductChange}
+				options={{
+					headerShown: false,
+				}}
+			/>
+
+			<Stack.Screen
+				name="Produtos"
+				component={Product}
+				options={{
+					headerShown: false,
+				}}
+			/>
 
 		</Stack.Navigator>
 	)
