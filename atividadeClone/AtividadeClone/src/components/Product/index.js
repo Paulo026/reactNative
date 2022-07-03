@@ -141,6 +141,9 @@ const Product = () => {
 			/>
 			<CardGroup>
 				<FlatList
+				showsVerticalScrollIndicator={false}
+				showsHorizontalScrollIndicator={false} //workaround?
+			   
 					data={Card}
 					renderItem={list}
 					keyExtractor={(item) => item.id}
