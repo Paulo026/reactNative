@@ -16,11 +16,15 @@ import {
 	SubTitleWrapper,
 	QuantityItem,
 	TextQuantity,
+	TextSub,
 } from "./styles";
-import { ButtonPrimary, TextButton } from "../../components/CustomButton/styles";
+import {
+	ButtonPrimary,
+	TextButton,
+} from "../../components/CustomButton/styles";
 import spacings from "../../theme/spacings";
 import { useNavigation } from "@react-navigation/native";
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign } from "@expo/vector-icons";
 import colors from "../../Theme/colors";
 
 const Lista = [
@@ -53,9 +57,19 @@ const ListCard = ({ nome, quantidade, preco, total }) => (
 	<Table>
 		<TextInfo>{nome}</TextInfo>
 		<QuantityItem>
-		<AntDesign name="minuscircleo" size={10} color={`${colors.secondary}`} style={{marginTop:5}} />
-		<TextQuantity>{quantidade}</TextQuantity>
-		<AntDesign name="pluscircleo" size={10} color={`${colors.secondary}`} style={{marginTop:5}}/>
+			<AntDesign
+				name="minuscircleo"
+				size={10}
+				color={`${colors.secondary}`}
+				style={{ marginTop: 5, marginStart: 28 }}
+			/>
+			<TextQuantity>{quantidade}</TextQuantity>
+			<AntDesign
+				name="pluscircleo"
+				size={10}
+				color={`${colors.secondary}`}
+				style={{ marginTop: 5 }}
+			/>
 		</QuantityItem>
 		<TextInfo>{preco}</TextInfo>
 		<TextInfo>{total}</TextInfo>
@@ -95,10 +109,11 @@ const Purchase = () => {
 				<SpacingHeight height={spacings.extraLarge} />
 				<SubTitleWrapper>
 					<TextInfo>Total da compra</TextInfo>
+					<TextInfo>R$190,00</TextInfo>
 				</SubTitleWrapper>
-				{/* <SpacingHeight height={spacings.medium} /> */}
 				<SubTitleWrapper>
 					<TextInfo>Data da compra</TextInfo>
+					<TextInfo>17/06/2022</TextInfo>
 				</SubTitleWrapper>
 			</PurchaseWrapper>
 			<ButtonWrapper>

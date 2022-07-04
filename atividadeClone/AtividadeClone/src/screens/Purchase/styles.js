@@ -49,7 +49,7 @@ export const ButtonWrapper = styled.View`
 	height: 40px;
 	margin: 50px 10px 10px 10px;
 	flex-direction: row;
-	gap: 40px; // Usei o gap para separar os botoes
+	gap: 40px; 
 `;
 
 export const ButtonPrimary = styled.View`
@@ -107,11 +107,8 @@ export const QuantityItem = styled.View`
 	justify-content: center;
 	width: 30px;
 	margin-right: 50px;
-	gap: 5px;
-	
+	gap: -4px;	
 `;
-
-// Verificar tamanho da letra fontSize
 
 export const SpacingHeight = styled.View`
 	width: 100%;
@@ -123,7 +120,9 @@ export const TitleWrapper = styled.View`
 	flex-direction: row;
 `;
 
+
 export const SubTitleWrapper = styled.View`
 	flex-direction: row;
 	justify-content: left;
+	gap: 180px;	
 `;
