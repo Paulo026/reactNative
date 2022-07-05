@@ -2,8 +2,8 @@ import colors from "../../Theme/colors";
 import styled from "styled-components/native";
 
 export const CardWrapper = styled.View`
-	width: 149px;
-	height: 175px;
+	width: 150px;
+	height: 180px;
 	background-color: ${colors.tertiary};
 	border-radius: 10px;
 	border: 2px solid ${colors.primary};
@@ -20,6 +20,7 @@ export const CardBotton = styled.View`
 	height: 20px;
 	margin-top: 8px;
 	align-self: center;
+	justify-content: center;
 	flex-direction: row;
 `;
 
@@ -53,8 +54,8 @@ export const CardTextBold = styled.Text`
 `;
 
 export const ProductImage = styled.Image`
-	width: 131px;
-	height: 57px;
+	width: 134px;
+	height: 87px;
 	align-self: center;
 	margin-top: 5px;
 	border-radius: 5px;
@@ -63,7 +64,8 @@ export const ProductImage = styled.Image`
 export const IconsGroup = styled.View`
 	width: 145px;
 	flex-direction: row;
-	margin-left: 100px;
+	justify-content: center;
+	gap: 20px;
 `;
 
 export const CardGroup = styled.View`

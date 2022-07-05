@@ -18,7 +18,7 @@ export const Logo = styled.Image`
 
 export const Title = styled.Text`
 	position: absolute;
-	margin-bottom: 555px;
+	margin-bottom: 500px;
 	font-size: 18px;
 	color: ${colors.tertiary};
 	font-weight: 800;
@@ -35,12 +35,13 @@ export const SubTitle = styled.Text`
 `;
 
 export const TextSimple = styled.Text`
-	width: 300px;
-	font-size: 10px;
+	max-width: 300px;
+	font-size: 15px;
 	color: ${colors.tertiary};
-	font-weight: bolder;
-	line-height: 10px;
+	font-weight: bold;
+	line-height: auto;
 	text-align: center;
+	margin-top: 10px;
 `;
 
 export const WrapperTextInfo = styled.TouchableWithoutFeedback`

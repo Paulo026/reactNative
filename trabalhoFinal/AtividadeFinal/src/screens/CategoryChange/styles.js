@@ -26,9 +26,9 @@ export const Logo = styled.Image`
 
 export const Title = styled.Text`
 	position: absolute;
-	margin-bottom: 555px;
+	margin-bottom: 450px;
 	font-size: 18px;
-	color: ${colors.secondary};
+	color: ${colors.tertiary};
 	font-weight: 800;
 	line-height: 22px;
 	text-align: center;

@@ -27,17 +27,6 @@ const CategoryChange = () => {
 			<Input placeholder={"Tec1"} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<Input placeholder={"imagem5.png"} />
-			<WrapperTextInfo>
-				<TextLink>
-					Selecionar Imagem
-					<Feather
-						name="upload"
-						size={15}
-						color={`${colors.secondary}`}
-						style={{ marginLeft: "7px" }}
-					/>
-				</TextLink>
-			</WrapperTextInfo>
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary>
 				<TextButton onPress={openScreen}>ALTERAR</TextButton>

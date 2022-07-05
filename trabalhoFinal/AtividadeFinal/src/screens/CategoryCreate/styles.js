@@ -25,13 +25,12 @@ export const Logo = styled.Image`
 `;
 
 export const Title = styled.Text`
-	position: absolute;
-	margin-bottom: 555px;
 	font-size: 18px;
-	color: ${colors.secondary};
+	color: ${colors.tertiary};
+	margin: 40px 0;
+	text-align: center;
 	font-weight: 800;
 	line-height: 22px;
-	text-align: center;
 `;
 
 export const WrapperTextInfo = styled.TouchableWithoutFeedback`

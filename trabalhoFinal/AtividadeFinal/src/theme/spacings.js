@@ -3,5 +3,5 @@ export default {
 	medium: "10px",
 	large: "15px",
 	extraLarge: "20px",
-	ultraLarge: "350px",
+	ultraLarge: "120px",
 };

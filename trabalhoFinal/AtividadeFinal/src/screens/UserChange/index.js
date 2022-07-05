@@ -17,11 +17,11 @@ import SmallLogo from "../../components/SmallLogo";
 import { Feather } from "@expo/vector-icons";
 import colors from "../../theme/colors";
 
-const ProductChange = () => {
+const UserChange = () => {
 	const navigation = useNavigation();
 
 	function openScreen() {
-		navigation.navigate("Produtos");
+		navigation.navigate("Usuários");
 	}
 
 	return (
@@ -32,15 +32,17 @@ const ProductChange = () => {
 			<Title>
 				Alterar
 				<br />
-				Produto
+				Usuário
 			</Title>
 			<Input placeholder={"Nome"} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Input placeholder={"Descrição"} />
+			<Input placeholder={"CPF"} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Input placeholder={"Preço R$"} />
+			<Input placeholder={"Data de Nascimento"} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Input placeholder={"Quantidade em estoque"} />
+			<Input placeholder={"Login"} />
+			<SpacingHeight height={spacings.extraLarge} />
+			<Input placeholder={"Ativo"} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<Input placeholder={"Link da Imagem"} />
 			<SpacingHeight height={spacings.extraLarge} />
@@ -53,4 +55,4 @@ const ProductChange = () => {
 	);
 };
 
-export default ProductChange;
+export default UserChange;

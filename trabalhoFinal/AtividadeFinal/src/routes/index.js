@@ -8,10 +8,13 @@ import UserSignUp from "../Screens/UserSignUp";
 import UserSignUpSuccess from "../screens/UserSignUpSuccess";
 import CategoryChange from "../screens/CategoryChange";
 import CategoryCreate from "../screens/CategoryCreate";
+import Category from "../screens/Category";
 import Product from "../screens/Product";
 import ProductCreate from "../screens/ProductCreate";
 import ProductChange from "../screens/ProductChange";
 import PasswordSuccess from "../screens/PasswordSuccess";
+import User from "../screens/User";
+import UserChange from "../screens/UserChange";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +24,27 @@ const Routes = () => {
 			<Stack.Screen
 				name="Login"
 				component={Login}
+				options={{
+					headerShown: false,
+				}}
+			/>
+			<Stack.Screen
+				name="Categorias"
+				component={Category}
+				options={{
+					headerShown: false,
+				}}
+			/>
+			<Stack.Screen
+				name="Usuários"
+				component={User}
+				options={{
+					headerShown: false,
+				}}
+			/>
+			<Stack.Screen
+				name="Alterar Usuário"
+				component={UserChange}
 				options={{
 					headerShown: false,
 				}}

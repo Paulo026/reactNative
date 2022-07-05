@@ -28,16 +28,22 @@ const UserSignUp = () => {
 			<Gradient position="top" />
 			<ExitButton />
 			<SmallLogo />
-			<Title>Cadastro</Title>
+			<Title>Cadastro de Usuário</Title>
 			<Input placeholder={"Nome"} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<Input placeholder={"CPF"} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<Input placeholder={"Data de Nascimento"} />
 			<SpacingHeight height={spacings.extraLarge} />
+			<Input placeholder={"Login"} />
+			<SpacingHeight height={spacings.extraLarge} />
+			<Input placeholder={"Link da Imagem"} />
+			<SpacingHeight height={spacings.extraLarge} />
 			<InputEye placeholder={"Senha"} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<InputEye placeholder={"Confirmar Senha"} />
+			<SpacingHeight height={spacings.extraLarge} />
+			<Input placeholder={"Ativo"} />
 			<ButtonPrimary onPress={openScreen}>
 				<TextButton>CADASTRAR</TextButton>
 			</ButtonPrimary>

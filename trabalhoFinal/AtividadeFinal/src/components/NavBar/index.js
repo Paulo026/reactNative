@@ -11,12 +11,12 @@ const NavBar = () => {
 		navigation.navigate("Sobre Nós");
 	}
 
-	function returnToPurchase() {
-		navigation.navigate("Carrinho");
+	function returnToCategory() {
+		navigation.navigate("Categorias");
 	}
 
-	function returnToFavorite() {
-		navigation.navigate("Favoritos");
+	function returnToUser() {
+		navigation.navigate("Usuários");
 	}
 
 	function returnToProduct() {
@@ -36,19 +36,19 @@ const NavBar = () => {
 					name="user"
 					size={28}
 					color={`${colors.tertiary}`}
-					onPress={returnToProduct}
+					onPress={returnToUser}
 				/>
 				<AntDesign
 					name="database"
 					size={28}
 					color={`${colors.tertiary}`}
-					onPress={returnToPurchase}
+					onPress={returnToCategory}
 				/>
 				<AntDesign
 					name="tag"
 					size={28}
 					color={`${colors.tertiary}`}
-					onPress={returnToFavorite}
+					onPress={returnToProduct}
 				/>
 			</WrapperNavBar>
 		</Container>

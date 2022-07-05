@@ -36,22 +36,13 @@ const ProductCreate = () => {
 			</Title>
 			<Input placeholder={"Nome"} />
 			<SpacingHeight height={spacings.extraLarge} />
+			<Input placeholder={"Descrição"} />
+			<SpacingHeight height={spacings.extraLarge} />
 			<Input placeholder={"Preço R$"} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<Input placeholder={"Quantidade em estoque"} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Input placeholder={"Imagem"} />
-			<WrapperTextInfo>
-				<TextLink>
-					Selecionar Imagem
-					<Feather
-						name="upload"
-						size={15}
-						color={`${colors.secondary}`}
-						style={{ marginLeft: "7px" }}
-					/>
-				</TextLink>
-			</WrapperTextInfo>
+			<Input placeholder={"Link da Imagem"} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary onPress={openScreen}>
 				<TextButton>CADASTRAR</TextButton>
