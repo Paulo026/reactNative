@@ -8,10 +8,12 @@ import UserSignUp from "../Screens/UserSignUp";
 import UserSignUpSuccess from "../screens/UserSignUpSuccess";
 import CategoryChange from "../screens/CategoryChange";
 import CategoryCreate from "../screens/CategoryCreate";
+import CategoryDelete from "../screens/CategoryDelete";
 import Category from "../screens/Category";
 import Product from "../screens/Product";
 import ProductCreate from "../screens/ProductCreate";
 import ProductChange from "../screens/ProductChange";
+import ProductDelete from "../screens/ProductDelete";
 import PasswordSuccess from "../screens/PasswordSuccess";
 import User from "../screens/User";
 import UserChange from "../screens/UserChange";
@@ -109,15 +111,32 @@ const Routes = () => {
 			/>
 
 			<Stack.Screen
+				name="Deletar Categoria"
+				component={CategoryDelete}
+				options={{
+					headerShown: false,
+				}}
+			/>
+
+			<Stack.Screen
 				name="Cadastro de Produto"
 				component={ProductCreate}
 				options={{
 					headerShown: false,
 				}}
 			/>
+
 			<Stack.Screen
 				name="Alterar Produto"
 				component={ProductChange}
+				options={{
+					headerShown: false,
+				}}
+			/>
+
+			<Stack.Screen
+				name="Deletar Produto"
+				component={ProductDelete}
 				options={{
 					headerShown: false,
 				}}

@@ -101,14 +101,21 @@ const Card = [
 ];
 
 const ListCard = ({ imagem, nome, preco, estoque, quantidade, descricao }) => {
-	const navigation = useNavigation();
+	const navigation = useNavigation();	
+	
 
 	function openProductChange() {
 		if (nome === "Produto 1") {
 			navigation.navigate("Alterar Produto");
-		}
+		}			
 	}
 
+	function openProductDelete(){
+		if (nome === "Produto 2") {
+			navigation.navigate("Deletar Produto")
+		}
+	}
+	
 	return (
 		<CardWrapper>
 			<CardTextBold>{nome}</CardTextBold>
@@ -118,7 +125,11 @@ const ListCard = ({ imagem, nome, preco, estoque, quantidade, descricao }) => {
 			<CardText>{descricao}</CardText>
 			<CardBotton>
 				<IconsGroup>
-					<Feather name="trash" size={12} color={`${colors.quinternary}`} />
+					<Feather name="trash" 
+					size={12}
+					 color={`${colors.quinternary}`}
+					 onPress={openProductDelete}
+					 />
 					<Feather
 						name="edit-3"
 						size={12}
@@ -144,6 +155,7 @@ const Product = () => {
 	);
 
 	const navigation = useNavigation();
+	// const newnavigation = useNavigation();
 
 	function openProductCreate() {
 		navigation.navigate("Cadastro de Produto");
@@ -151,6 +163,10 @@ const Product = () => {
 
 	function openProductChange() {
 		navigation.navigate("Alterar Produto");
+	}
+
+	function openProductDelete(){
+		navigation.navigate("Deletar Produto");
 	}
 	return (
 		<Container>

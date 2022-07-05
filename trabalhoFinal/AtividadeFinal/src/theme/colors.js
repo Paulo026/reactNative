@@ -5,6 +5,7 @@ export default {
 	quaternary: "#000",
 	quinternary: "red",
 	sexternary: "#9400d3",
+	septernary: "#FFA500",
 	gradientPrimary: "#9A0ACC",
 	gradientSecondary: "#D9D9D9",
 };

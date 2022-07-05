@@ -18,6 +18,8 @@ import colors from "../../theme/colors";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { AntDesign } from '@expo/vector-icons';
+import { Imagem } from "./styles";
 
 const Card = [
 	{
@@ -107,7 +109,7 @@ const Card = [
 	},
 ];
 
-const ListCard = ({ nome, cpf, nascimento, login, ativo, imagem }) => {
+const ListCard = ({ nome, cpf, nascimento, login, imagem }) => {
 	const navigation = useNavigation();
 
 	function openUserChange() {
@@ -118,9 +120,11 @@ const ListCard = ({ nome, cpf, nascimento, login, ativo, imagem }) => {
 
 	return (
 		<CardWrapper>
+			<Imagem>
 			<CardTextBold>{nome}</CardTextBold>
-			<CardTextBold>{ativo}</CardTextBold>
-			<ProductImage source={imagem} />
+			<AntDesign name="checkcircle" size={13} color="black" style={{paddingTop:3}} />
+			</Imagem>			
+			<ProductImage source={imagem} />			
 			<CardText>{cpf}</CardText>
 			<CardText>{nascimento}</CardText>
 			<CardText>{login}</CardText>

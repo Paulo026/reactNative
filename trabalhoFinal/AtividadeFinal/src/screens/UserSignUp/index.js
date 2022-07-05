@@ -15,6 +15,7 @@ import Gradient from "../../components/Gradient";
 import { useNavigation } from "@react-navigation/native";
 import ExitButton from "../../components/ExitButton";
 import SmallLogo from "../../components/SmallLogo";
+import CheckBoxButton from './../../components/CheckBoxButton/index';
 
 const UserSignUp = () => {
 	const navigation = useNavigation();
@@ -43,7 +44,7 @@ const UserSignUp = () => {
 			<SpacingHeight height={spacings.extraLarge} />
 			<InputEye placeholder={"Confirmar Senha"} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Input placeholder={"Ativo"} />
+			<CheckBoxButton />
 			<ButtonPrimary onPress={openScreen}>
 				<TextButton>CADASTRAR</TextButton>
 			</ButtonPrimary>

@@ -73,6 +73,13 @@ const ListCard = ({ foto, nome }) => {
 		if (nome === "Categoria 1") {
 			navigation.navigate("Alterar Categoria");
 		}
+		
+	}
+
+	function openProductDelete(){
+		if (nome === "Categoria 2") {
+			navigation.navigate("Deletar Categoria")
+		}
 	}
 
 	return (
@@ -81,7 +88,11 @@ const ListCard = ({ foto, nome }) => {
 			<CardTextBold>{nome}</CardTextBold>
 			<CardBotton>
 				<IconsGroup>
-					<Feather name="trash" size={20} color={`${colors.quinternary}`} />
+					<Feather name="trash" 
+					size={20}
+					 color={`${colors.quinternary}`}
+					 onPress={openProductDelete}
+					 />
 					<Feather
 						name="edit-3"
 						size={20}
@@ -106,6 +117,10 @@ const Category = () => {
 	function openProductChange() {
 		navigation.navigate("Alterar Categoria");
 	}
+	function openProductDelete() {
+		navigation.navigate("Deletar Categoria")
+}
+
 	return (
 		<Container>
 			<Gradient position="top" />
