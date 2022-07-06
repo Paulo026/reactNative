@@ -82,7 +82,7 @@ export const TextInfo = styled.Text`
 	font-family: "sans-serif";
 	padding-top: 5px;
 	padding-right: 7px;
-	margin-right: 13px;
+	margin-right: 15px;
 	height: 50px;
 	width: 70px;
 	text-align: left;
@@ -125,4 +125,32 @@ export const SubTitleWrapper = styled.View`
 	flex-direction: row;
 	justify-content: left;
 	gap: 180px;	
+`;
+
+export const SubTextInfo = styled.Text`
+	font-size: 10px;
+	color: ${colors.secondary};
+	font-weight: 800;
+	font-family: "sans-serif";
+	padding-top: 5px;
+	padding-right: 7px;
+	margin-right: 15px;
+	margin-left: -25px;
+	height: 50px;
+	width: 70px;
+	text-align: left;	
+`;
+
+export const SobTextInfo = styled.Text`
+	font-size: 10px;
+	color: ${colors.secondary};
+	font-weight: 800;
+	font-family: "sans-serif";
+	padding-top: 5px;
+	padding-right: 7px;
+	margin-right: 15px;
+	margin-left: -15px;
+	height: 50px;
+	width: 70px;
+	text-align: left;	
 `;
