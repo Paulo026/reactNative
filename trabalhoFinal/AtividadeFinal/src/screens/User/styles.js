@@ -28,5 +28,5 @@ export const Imagem = styled.View`
 	flex-direction: row;
 	gap: 30px;
 	margin-left: 43px;
-	margin-right: 5px
+	margin-right: 5px;	
 `;

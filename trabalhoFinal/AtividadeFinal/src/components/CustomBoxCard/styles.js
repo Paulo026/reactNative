@@ -22,6 +22,8 @@ export const CardBotton = styled.View`
 	align-self: center;
 	justify-content: center;
 	flex-direction: row;
+	bottom: 0;
+	position: absolute;
 `;
 
 export const NumberButtonOne = styled.View`
@@ -59,6 +61,7 @@ export const ProductImage = styled.Image`
 	align-self: center;
 	margin-top: 5px;
 	border-radius: 5px;
+	border: 1px solid ${colors.primary};
 `;
 
 export const IconsGroup = styled.View`

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 import Gradient from "../../components/Gradient";
 import { Container, Title } from "../../screens/Category/styles";
@@ -14,90 +14,44 @@ import {
 	IconsGroup,
 } from "../../components/CustomBoxCard/styles";
 import colors from "../../theme/colors";
-import { Feather } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { getCategoryApi } from './../../service/Category/index';
 
-const Card = [
-	{
-		id: "1",
-		foto: "https://imagenspng.com/wp-content/uploads/imagem-da-minnie-vermelha-em-png-1448x2048.png",
-		nome: "Categoria 1",
-	},
 
-	{
-		id: "2",
-		foto: "https://www.seekpng.com/png/detail/12-129046_like-imagem-de-fundo-png-like.png",
-		nome: "Categoria 2",
-	},
 
-	{
-		id: "3",
-		foto: "https://toppng.com/uploads/preview/mickey-mouse-mickey-11563574299xftcehblfk.png",
-		nome: "Categoria 3",
-	},
-
-	{
-		id: "4",
-		foto: require("../../../assets/4.jpg"),
-		nome: "Categoria 4",
-	},
-
-	{
-		id: "5",
-		foto: require("../../../assets/5.jpg"),
-		nome: "Categoria 5",
-	},
-
-	{
-		id: "6",
-		foto: require("../../../assets/6.jpg"),
-		nome: "Categoria 6",
-	},
-	{
-		id: "7",
-		foto: require("../../../assets/6.jpg"),
-		nome: "Categoria 7",
-	},
-	{
-		id: "8",
-		foto: require("../../../assets/6.jpg"),
-		nome: "Categoria 8",
-	},
-];
-
-const ListCard = ({ foto, nome }) => {
+const ListCard = ({ image, name }) => {
 	const navigation = useNavigation();
 
-	function openProductChange() {
+	function openCategoryChange() {
 		if (nome === "Categoria 1") {
 			navigation.navigate("Alterar Categoria");
 		}
-		
 	}
 
-	function openProductDelete(){
+	function openCategoryDelete() {
 		if (nome === "Categoria 2") {
-			navigation.navigate("Deletar Categoria")
+			navigation.navigate("Deletar Categoria");
 		}
 	}
 
 	return (
 		<CardWrapper>
-			<ProductImage source={foto} />
-			<CardTextBold>{nome}</CardTextBold>
+			<ProductImage source={{ uri: image }} />
+			<CardTextBold>{name}</CardTextBold>
 			<CardBotton>
-				<IconsGroup>
-					<Feather name="trash" 
-					size={20}
-					 color={`${colors.quinternary}`}
-					 onPress={openProductDelete}
-					 />
+				<IconsGroup >
+					<Feather 
+						name="trash"
+						size={20}
+						color={`${colors.quinternary}`}
+						onPress={openCategoryDelete}
+					/>
 					<Feather
 						name="edit-3"
 						size={20}
 						color={`${colors.secondary}`}
-						onPress={openProductChange}
+						onPress={openCategoryChange}
 					/>
 				</IconsGroup>
 			</CardBotton>
@@ -106,20 +60,21 @@ const ListCard = ({ foto, nome }) => {
 };
 
 const Category = () => {
-	const list = ({ item }) => <ListCard foto={item.foto} nome={item.nome} />;
+	const [category, setCategory] = useState([]);
+
+	useEffect(() => {
+		getCategoryApi().then((response) => {
+			setCategory(response)
+		});
+	}, []);
+
+	const renderCategory = ({ item }) => <ListCard name={item.nome} image={item.foto} />;
 
 	const navigation = useNavigation();
 
-	function openProductCreate() {
+	function openCategoryCreate() {
 		navigation.navigate("Cadastro de Categoria");
 	}
-
-	function openProductChange() {
-		navigation.navigate("Alterar Categoria");
-	}
-	function openProductDelete() {
-		navigation.navigate("Deletar Categoria")
-}
 
 	return (
 		<Container>
@@ -132,12 +87,12 @@ const Category = () => {
 				size={20}
 				color={`${colors.tertiary}`}
 				style={{ position: "absolute", top: "75px", left: "22px" }}
-				onPress={openProductCreate}
+				onPress={openCategoryCreate}
 			/>
 			<CardGroup>
 				<FlatList
-					data={Card}
-					renderItem={list}
+					data={category}
+					renderItem={renderCategory}
 					keyExtractor={(item) => item.id}
 					numColumns={2}
 				/>

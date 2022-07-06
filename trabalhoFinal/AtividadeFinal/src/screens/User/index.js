@@ -1,5 +1,5 @@
-import React from "react";
-import { FlatList } from "react-native";
+import React, { useEffect, useState } from "react";
+import { FlatList, View } from "react-native";
 import Gradient from "../../components/Gradient";
 import { Container, Title } from "../../screens/AboutUs/styles";
 import SmallLogo from "../../components/SmallLogo";
@@ -20,96 +20,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from '@expo/vector-icons';
 import { Imagem } from "./styles";
+import api from './../../service/api';
 
-const Card = [
-	{
-		id: "1",
-		nome: "Usuário 1",
-		cpf: "CPF 1",
-		nascimento: "Nascimento 1",
-		login: "login1",
-		ativo: true,
-		senha: "123456",
-		imagem: require("../../../assets/1.jpg"),
-	},
 
-	{
-		id: "2",
-		nome: "Usuário 2",
-		cpf: "CPF 2",
-		nascimento: "Nascimento 2",
-		login: "login2",
-		ativo: true,
-		senha: "123456",
-		imagem: require("../../../assets/2.png"),
-	},
-
-	{
-		id: "3",
-		nome: "Usuário 3",
-		cpf: "CPF 3",
-		nascimento: "Nascimento 3",
-		login: "login3",
-		ativo: false,
-		senha: "123456",
-		imagem: require("../../../assets/3.jpg"),
-	},
-
-	{
-		id: "4",
-		nome: "Usuário 4",
-		cpf: "CPF 4",
-		nascimento: "Nascimento 4",
-		login: "login4",
-		ativo: true,
-		senha: "123456",
-		imagem: require("../../../assets/4.jpg"),
-	},
-
-	{
-		id: "5",
-		nome: "Usuário 5",
-		cpf: "CPF 5",
-		nascimento: "Nascimento 5",
-		login: "login5",
-		ativo: true,
-		senha: "123456",
-		imagem: require("../../../assets/5.jpg"),
-	},
-
-	{
-		id: "6",
-		nome: "Usuário 6",
-		cpf: "CPF 6",
-		nascimento: "Nascimento 6",
-		login: "login6",
-		ativo: true,
-		senha: "123456",
-		imagem: require("../../../assets/6.jpg"),
-	},
-	{
-		id: "7",
-		nome: "Usuário 7",
-		cpf: "CPF 7",
-		nascimento: "Nascimento 7",
-		login: "login7",
-		ativo: true,
-		senha: "123456",
-		imagem: require("../../../assets/1.jpg"),
-	},
-	{
-		id: "8",
-		nome: "Usuário 8",
-		cpf: "CPF 8",
-		nascimento: "Nascimento 8",
-		login: "login8",
-		ativo: true,
-		senha: "123456",
-		imagem: require("../../../assets/2.png"),
-	},
-];
-
-const ListCard = ({ nome, cpf, nascimento, login, imagem }) => {
+const ListCard = ({ nome, cpf, nascimento, login, foto, ativo }) => {
 	const navigation = useNavigation();
 
 	function openUserChange() {
@@ -117,14 +31,23 @@ const ListCard = ({ nome, cpf, nascimento, login, imagem }) => {
 			navigation.navigate("Alterar Usuário");
 		}
 	}
-
+	const checked = (<AntDesign name="checkcircle" size={13} color="black" style={{paddingTop:3}}/>);
+	const unChecked = (<AntDesign name="checkcircleo" size={13} color="black" style={{paddingTop:3}}/>);
+	const IsChecked = () => {if (ativo === true)  {
+		return checked
+	} else {
+		return unChecked
+	}
+	};
 	return (
 		<CardWrapper>
 			<Imagem>
-			<CardTextBold>{nome}</CardTextBold>
-			<AntDesign name="checkcircle" size={13} color="black" style={{paddingTop:3}} />
+				<View style={{width:50}}>
+			<CardTextBold style={{whiteSpace:"nowrap"}}>{nome}</CardTextBold>
+			</View>
+			<IsChecked />
 			</Imagem>			
-			<ProductImage source={imagem} />			
+			<ProductImage source={{uri:foto}} />			
 			<CardText>{cpf}</CardText>
 			<CardText>{nascimento}</CardText>
 			<CardText>{login}</CardText>
@@ -144,15 +67,25 @@ const ListCard = ({ nome, cpf, nascimento, login, imagem }) => {
 };
 
 const User = () => {
+	const [usuario, setUsuario] = useState ([]);
+
+	useEffect(()=>{
+		api.get("/usuario").then((response) => {
+			console.log(response.data);
+			// console.log("upDate usuario");
+			setUsuario(response.data);
+		}); 
+	},[]);
+
 	const list = ({ item }) => (
 		<ListCard
 			nome={item.nome}
 			cpf={item.cpf}
-			nascimento={item.nascimento}
+			nascimento={item.dtNascimento}
 			login={item.login}
 			ativo={item.ativo}
 			senha={item.senha}
-			imagem={item.imagem}
+			foto={item.foto}
 		/>
 	);
 
@@ -180,9 +113,9 @@ const User = () => {
 			/>
 			<CardGroup>
 				<FlatList
-					data={Card}
+					data={usuario}
 					renderItem={list}
-					keyExtractor={(item) => item.id}
+					keyExtractor={(item) =>item.id}
 					numColumns={2}
 				/>
 			</CardGroup>
