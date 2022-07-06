@@ -17,6 +17,8 @@ import {
 	QuantityItem,
 	TextQuantity,
 	TextSub,
+	SubTextInfo,
+	SobTextInfo,
 } from "./styles";
 import {
 	ButtonPrimary,
@@ -108,12 +110,12 @@ const Purchase = () => {
 
 				<SpacingHeight height={spacings.extraLarge} />
 				<SubTitleWrapper>
-					<TextInfo>Total da compra</TextInfo>
-					<TextInfo>R$190,00</TextInfo>
+					<TextInfo style={{whiteSpace:"nowrap"}}>Total da compra</TextInfo>
+					<SobTextInfo>R$190,00</SobTextInfo>
 				</SubTitleWrapper>
 				<SubTitleWrapper>
-					<TextInfo>Data da compra</TextInfo>
-					<TextInfo>17/06/2022</TextInfo>
+					<TextInfo style={{whiteSpace:"nowrap"}}>Data da compra</TextInfo>
+					<SubTextInfo>17/06/2022</SubTextInfo>
 				</SubTitleWrapper>
 			</PurchaseWrapper>
 			<ButtonWrapper>
