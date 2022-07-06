@@ -24,7 +24,7 @@ import NavBar from "../../components/NavBar";
 import eduardo from "../../../assets/eduardo.jpg";
 import leonardo from "../../../assets/leonardo.jpg";
 import paulo from "../../../assets/paulo.jpg";
-import tatiana from "../../../assets/paulo.jpg";
+import tatiana from "../../../assets/tatiana.jpeg";
 import wagner from "../../../assets/wagner.jpg";
 
 const AboutUs = () => {
