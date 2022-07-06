@@ -19,7 +19,7 @@ export const Title = styled.Text`
 	position: absolute;
 	margin-bottom: 555px;
 	font-size: 18px;
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-weight: 800;
 	line-height: 22px;
 `;

@@ -19,14 +19,14 @@ export const Container = styled.View`
 `;
 
 export const Logo = styled.Image`
-	width: 100px;
-	height: 100px;
+	width: 130px;
+	height: 130px;
 	border-radius: 50%;
 `;
 
 export const Title = styled.Text`
 	font-size: 20px;
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	margin: 40px 0;
 	font-weight: 800;
 	line-height: 22px;
@@ -37,7 +37,7 @@ export const WrapperTextInfo = styled.TouchableWithoutFeedback`
 `;
 
 export const TextInfo = styled.TouchableOpacity`
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;
@@ -45,7 +45,7 @@ export const TextInfo = styled.TouchableOpacity`
 	font-family: "Roboto";
 `;
 export const TextLink = styled.Text`
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;

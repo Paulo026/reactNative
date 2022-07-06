@@ -20,7 +20,7 @@ export const Title = styled.Text`
 	position: absolute;
 	margin-bottom: 500px;
 	font-size: 18px;
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	font-weight: 800;
 	line-height: 22px;
 `;
@@ -28,7 +28,7 @@ export const Title = styled.Text`
 export const SubTitle = styled.Text`
 	width: 300px;
 	font-size: 15px;
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	font-weight: bolder;
 	line-height: 22px;
 	text-align: center;
@@ -37,7 +37,7 @@ export const SubTitle = styled.Text`
 export const TextSimple = styled.Text`
 	max-width: 300px;
 	font-size: 15px;
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	font-weight: bold;
 	line-height: auto;
 	text-align: center;
@@ -72,7 +72,7 @@ export const IconsGroup = styled.View`
 // `;
 
 export const TextLink = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;
@@ -117,7 +117,8 @@ export const InfoWrapper = styled.View`
 `;
 
 export const TextImage = styled.Text`
-	color: ${colors.tertiary};
+	color: ${colors.quaternary
+	};
 `;
 
 export const People = styled.Image`

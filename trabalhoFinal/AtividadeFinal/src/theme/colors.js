@@ -6,6 +6,6 @@ export default {
 	quinternary: "red",
 	sexternary: "#9400d3",
 	septernary: "#FFA500",
-	gradientPrimary: "#9A0ACC",
+	gradientPrimary: "#FFA500",
 	gradientSecondary: "#D9D9D9",
 };

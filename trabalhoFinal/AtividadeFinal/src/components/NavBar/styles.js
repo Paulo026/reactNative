@@ -4,7 +4,7 @@ import colors from "../../theme/colors";
 export const Container = styled.View`
 	width: 360px;
 	height: 54px;
-	background-color: ${colors.sexternary};
+	background-color: ${colors.septernary};
 	z-index: 1;
 	position: absolute;
 	bottom: 0;

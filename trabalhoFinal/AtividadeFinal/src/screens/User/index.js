@@ -69,13 +69,11 @@ const ListCard = ({ nome, cpf, nascimento, login, foto, ativo }) => {
 const User = () => {
 	const [usuario, setUsuario] = useState ([]);
 
-	useEffect(()=>{
+	useEffect(() => {
 		api.get("/usuario").then((response) => {
-			console.log(response.data);
-			// console.log("upDate usuario");
 			setUsuario(response.data);
-		}); 
-	},[]);
+		});
+	}, []);
 
 	const list = ({ item }) => (
 		<ListCard

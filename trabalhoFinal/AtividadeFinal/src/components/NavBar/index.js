@@ -29,25 +29,25 @@ const NavBar = () => {
 				<AntDesign
 					name="home"
 					size={28}
-					color={`${colors.tertiary}`}
+					color={`${colors.quaternary}`}
 					onPress={returnToMarket}
 				/>
 				<AntDesign
 					name="user"
 					size={28}
-					color={`${colors.tertiary}`}
+					color={`${colors.quaternary}`}
 					onPress={returnToUser}
 				/>
 				<AntDesign
 					name="database"
 					size={28}
-					color={`${colors.tertiary}`}
+					color={`${colors.quaternary}`}
 					onPress={returnToCategory}
 				/>
 				<AntDesign
 					name="tag"
 					size={28}
-					color={`${colors.tertiary}`}
+					color={`${colors.quaternary}`}
 					onPress={returnToProduct}
 				/>
 			</WrapperNavBar>
