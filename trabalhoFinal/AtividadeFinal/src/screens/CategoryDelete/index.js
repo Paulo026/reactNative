@@ -9,7 +9,7 @@ const CategoryDelete = () => {
 	const navigation = useNavigation();
 
 	function openScreen() {
-		navigation.navigate("Categorias");
+		navigation.push("Categorias");
 	}
 
 	return (
@@ -20,10 +20,10 @@ const CategoryDelete = () => {
 			<SpacingHeight height={spacings.extraLarge} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Title>Deseja realmente deletar {"\n"}esta categoria?</Title>
+			<Title>Categoria deletada com sucesso!</Title>
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary>
-				<TextButton onPress={openScreen}>DELETAR</TextButton>
+				<TextButton onPress={openScreen}>RETORNAR</TextButton>
 			</ButtonPrimary>
 			<Gradient position="bot" />
 		</Container>

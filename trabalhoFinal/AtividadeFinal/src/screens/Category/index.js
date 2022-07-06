@@ -16,65 +16,60 @@ import {
 import colors from "../../theme/colors";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { getCategoryApi } from './../../service/Category/index';
-
-
-
-const ListCard = ({ image, name }) => {
-	const navigation = useNavigation();
-
-	function openCategoryChange() {
-		if (nome === "Categoria 1") {
-			navigation.navigate("Alterar Categoria");
-		}
-	}
-
-	function openCategoryDelete() {
-		if (nome === "Categoria 2") {
-			navigation.navigate("Deletar Categoria");
-		}
-	}
-
-	return (
-		<CardWrapper>
-			<ProductImage source={{ uri: image }} />
-			<CardTextBold>{name}</CardTextBold>
-			<CardBotton>
-				<IconsGroup >
-					<Feather 
-						name="trash"
-						size={20}
-						color={`${colors.quinternary}`}
-						onPress={openCategoryDelete}
-					/>
-					<Feather
-						name="edit-3"
-						size={20}
-						color={`${colors.secondary}`}
-						onPress={openCategoryChange}
-					/>
-				</IconsGroup>
-			</CardBotton>
-		</CardWrapper>
-	);
-};
+import { deleteCategoryApi, getCategoryApi } from "./../../service/Category/index";
 
 const Category = () => {
 	const [category, setCategory] = useState([]);
+	const navigation = useNavigation();
 
 	useEffect(() => {
 		getCategoryApi().then((response) => {
-			setCategory(response)
+			setCategory(response);
 		});
 	}, []);
-
-	const renderCategory = ({ item }) => <ListCard name={item.nome} image={item.foto} />;
-
-	const navigation = useNavigation();
 
 	function openCategoryCreate() {
 		navigation.navigate("Cadastro de Categoria");
 	}
+
+	const renderCategory = ({ item }) => (
+		<ListCard name={item.nome} image={item.foto} id={item.id} />
+	);
+
+	const ListCard = ({ id, image, name }) => {
+		function openCategoryDelete() {
+			deleteCategoryApi(id);
+			navigation.navigate("Deletar Categoria");
+		}
+
+		function openCategoryChange() {
+			if (nome === "Categoria 1") {
+				navigation.navigate("Alterar Categoria");
+			}
+		}
+		return (
+			<CardWrapper>
+				<ProductImage source={{ uri: image }} />
+				<CardTextBold>{name}</CardTextBold>
+				<CardBotton>
+					<IconsGroup>
+						<Feather
+							name="trash"
+							size={20}
+							color={`${colors.quinternary}`}
+							onPress={openCategoryDelete}
+						/>
+						<Feather
+							name="edit-3"
+							size={20}
+							color={`${colors.secondary}`}
+							onPress={openCategoryChange}
+						/>
+					</IconsGroup>
+				</CardBotton>
+			</CardWrapper>
+		);
+	};
 
 	return (
 		<Container>

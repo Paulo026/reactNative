@@ -17,7 +17,7 @@ export const Logo = styled.Image`
 
 export const Title = styled.Text`
 	font-size: 18px;
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	margin: 40px 0;
 	font-weight: 800;
 	line-height: 22px;

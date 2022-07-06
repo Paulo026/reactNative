@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { Container, Title, SpacingHeight, WrapperTextInfo, TextLink } from "./styles";
 import { ButtonPrimary, TextButton } from "../../components/CustomButton/styles";
 import Input from "../../components/Input";
@@ -8,11 +9,22 @@ import { useNavigation } from "@react-navigation/native";
 import SmallLogo from "../../components/SmallLogo/index";
 import { Feather } from "@expo/vector-icons";
 import colors from "../../Theme/colors";
+import createCategoryApi from "../../service/Category";
 
 const CategoryCreate = () => {
+	const [categoryCreate, setCategoryCreate] = useState({});
+	const [categoryName, setCategoryName] = useState("");
+	const [categoryImage, setCategoryImage] = useState("");
 	const navigation = useNavigation();
 
 	function openScreen() {
+		navigation.navigate("Sobre Nós");
+	}
+
+	function createCategory(categoryName, categoryImage) {
+		createCategoryApi(categoryName, categoryImage).then((response) => {
+			setCategoryCreate(response);
+		});
 		navigation.navigate("Sobre Nós");
 	}
 
@@ -22,14 +34,13 @@ const CategoryCreate = () => {
 			<ExitButton />
 			<SmallLogo />
 			<SpacingHeight height={spacings.extraLarge} />
-
 			<Title>Cadastro{"\n"}de Categoria</Title>
-			<Input placeholder={"Nome"} />
+			<Input placeholder={"Nome"} onChangeText={setCategoryName} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Input placeholder={"Link da Imagem"} />
+			<Input placeholder={"Link da Imagem"} onChangeText={setCategoryImage} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary>
-				<TextButton onPress={openScreen}>CADASTRAR</TextButton>
+				<TextButton onPress={createCategory}>CADASTRAR</TextButton>
 			</ButtonPrimary>
 			<Gradient position="bottom" />
 		</Container>
