@@ -44,10 +44,9 @@ const Category = () => {
 		}
 
 		function openCategoryChange() {
-			if (nome === "Categoria 1") {
-				navigation.navigate("Alterar Categoria");
-			}
+			navigation.navigate("Alterar Categoria");
 		}
+
 		return (
 			<CardWrapper>
 				<ProductImage source={{ uri: image }} />

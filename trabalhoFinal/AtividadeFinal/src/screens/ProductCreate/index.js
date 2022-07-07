@@ -1,12 +1,5 @@
-import {
-	Container,
-	Logo,
-	Title,
-	TextInfo,
-	SpacingHeight,
-	WrapperTextInfo,
-	TextLink,
-} from "./styles";
+import React, { useState } from "react";
+import { Container, Title, SpacingHeight } from "./styles";
 import { ButtonPrimary, TextButton } from "../../components/CustomButton/styles";
 import Input from "../../components/Input";
 import spacings from "../../Theme/spacings";
@@ -14,14 +7,27 @@ import Gradient from "../../components/Gradient";
 import { useNavigation } from "@react-navigation/native";
 import ExitButton from "../../components/ExitButton";
 import SmallLogo from "../../components/SmallLogo";
-import { Feather } from "@expo/vector-icons";
-import colors from "../../theme/colors";
+import api from "../../service/api";
 
 const ProductCreate = () => {
 	const navigation = useNavigation();
+	const [productName, setProductName] = useState("");
+	const [productDescription, setProductDescription] = useState("");
+	const [productPrice, setProductPrice] = useState("");
+	const [productQuantity, setProductQuantity] = useState("");
+	const [productImage, setProductImage] = useState("");
+	const [productCategory, setProductCategory] = useState("");
 
-	function openScreen() {
-		navigation.navigate("Produtos");
+	function createProduct() {
+		api.post("/produto", {
+			nome: productName,
+			descricao: productDescription,
+			qtdEstoque: productQuantity,
+			preco: productPrice,
+			foto: productImage,
+			categoria: productCategory,
+		}).then((response) => response.data);
+		navigation.navigate("Sobre Nõs")
 	}
 
 	return (
@@ -34,7 +40,7 @@ const ProductCreate = () => {
 				<br />
 				de Produto
 			</Title>
-			<Input placeholder={"Nome"} />
+			<Input placeholder={"Nome" onChangeText={(text) => setCategoryName(text)} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<Input placeholder={"Descrição"} />
 			<SpacingHeight height={spacings.extraLarge} />

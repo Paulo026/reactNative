@@ -9,7 +9,7 @@ const UserSignUpSuccess = () => {
 	const navigation = useNavigation();
 
 	function openScreen() {
-		navigation.navigate("Login");
+		navigation.navigate("Sobre Nós");
 	}
 
 	return (
@@ -24,7 +24,7 @@ const UserSignUpSuccess = () => {
 			<Title>Usuário cadastrado com sucesso!</Title>
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary>
-				<TextButton onPress={openScreen}>LOGIN</TextButton>
+				<TextButton onPress={openScreen}>RETORNAR</TextButton>
 			</ButtonPrimary>
 			<Gradient position="bot" />
 		</Container>
