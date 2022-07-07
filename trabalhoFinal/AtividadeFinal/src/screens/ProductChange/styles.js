@@ -28,7 +28,7 @@ export const Title = styled.Text`
 	position: absolute;
 	margin-bottom: 555px;
 	font-size: 18px;
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	font-weight: 800;
 	line-height: 22px;
 	text-align: center;
@@ -39,7 +39,7 @@ export const WrapperTextInfo = styled.TouchableWithoutFeedback`
 `;
 
 export const TextInfo = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;
@@ -52,7 +52,7 @@ export const SpacingHeight = styled.View`
 `;
 
 export const TextLink = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;

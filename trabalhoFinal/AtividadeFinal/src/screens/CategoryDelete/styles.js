@@ -29,7 +29,7 @@ export const WrapperTextInfo = styled.TouchableWithoutFeedback`
 `;
 
 export const TextInfo = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;

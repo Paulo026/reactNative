@@ -26,7 +26,7 @@ export const Logo = styled.Image`
 
 export const Title = styled.Text`
 	font-size: 18px;
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	margin: 40px 0;
 	text-align: center;
 	font-weight: 800;
@@ -38,7 +38,7 @@ export const WrapperTextInfo = styled.TouchableWithoutFeedback`
 `;
 
 export const TextInfo = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;
@@ -51,7 +51,7 @@ export const SpacingHeight = styled.View`
 `;
 
 export const TextLink = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;

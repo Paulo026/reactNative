@@ -26,7 +26,7 @@ export const Logo = styled.Image`
 
 export const Title = styled.Text`
 	font-size: 18px;
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	margin: 40px 0;
 	font-weight: 800;
 	line-height: 22px;
@@ -37,7 +37,7 @@ export const WrapperTextInfo = styled.TouchableWithoutFeedback`
 `;
 
 export const TextInfo = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;

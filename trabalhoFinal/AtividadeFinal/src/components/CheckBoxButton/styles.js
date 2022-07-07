@@ -15,14 +15,16 @@ export const Container = styled.View`
     export const Label = styled.Text`
         margin: 0;
         margin-left: 5px;    
-        color:${colors.tertiary};
+        color:${colors.quaternary};
         font-size: 12;
+        font-style: italic;
     `;
 
     export const IconLabel = styled.Text`
         text-align: center; 
-        color:${colors.tertiary};   
+        color:${colors.quaternary};   
         font-size: 12px; 
+        font-style: italic;
     `;
   
    

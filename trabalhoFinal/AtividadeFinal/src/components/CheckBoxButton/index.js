@@ -17,7 +17,7 @@ const CheckBoxButton = () => {
         />
         <Label>Usuário: ativo ou inativo...</Label>
        </CheckBoxContainer>
-      <IconLabel>Você decide: {isSelected ? "🥳 ativo" : "👻 inativo"}</IconLabel>
+      <IconLabel>Você decide: {isSelected ? <strong>🥳 ATIVO</strong> : <strong>👻 INATIVO</strong>}</IconLabel>
     </Container>
   );
 };

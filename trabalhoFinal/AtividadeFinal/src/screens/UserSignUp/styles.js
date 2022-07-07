@@ -1,14 +1,6 @@
 import styled from "styled-components/native";
 import colors from "../../Theme/colors";
-// import { LinearGradient } from "expo-linear-gradient";
 
-// export const Gradient = styled.LinearGradient`
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     top: 0;
-//     height: 30%;
-// `;
 
 export const Container = styled.View`
 	flex: 1;
@@ -45,7 +37,7 @@ export const TextInfo = styled.TouchableOpacity`
 	font-family: "Roboto";
 `;
 export const TextLink = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;

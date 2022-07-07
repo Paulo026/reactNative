@@ -1,14 +1,6 @@
 import styled from "styled-components/native";
 import colors from "../../Theme/colors";
-// import { LinearGradient } from "expo-linear-gradient";
 
-// export const Gradient = styled.LinearGradient`
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     top: 0;
-//     height: 30%;
-// `;
 
 export const Container = styled.View`
 	flex: 1;
@@ -28,7 +20,7 @@ export const Title = styled.Text`
 	position: absolute;
 	margin-bottom: 555px;
 	font-size: 18px;
-	color: ${colors.tertiary};
+	color: ${colors.quaternary};
 	font-weight: 800;
 	line-height: 22px;
 	text-align: center;
@@ -39,7 +31,7 @@ export const WrapperTextInfo = styled.TouchableWithoutFeedback`
 `;
 
 export const TextInfo = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;
@@ -52,7 +44,7 @@ export const SpacingHeight = styled.View`
 `;
 
 export const TextLink = styled.Text`
-	color: ${colors.secondary};
+	color: ${colors.quaternary};
 	font-size: 10px;
 	font-weight: 700;
 	line-height: 12px;
