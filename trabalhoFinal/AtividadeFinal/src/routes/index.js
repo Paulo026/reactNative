@@ -17,6 +17,7 @@ import ProductDelete from "../screens/ProductDelete";
 import PasswordSuccess from "../screens/PasswordSuccess";
 import User from "../screens/User";
 import UserChange from "../screens/UserChange";
+import UserDelete from "../screens/UserDelete";
 
 const Stack = createNativeStackNavigator();
 
@@ -61,6 +62,13 @@ const Routes = () => {
 			<Stack.Screen
 				name="Cadastro de Usuário feito com sucesso"
 				component={UserSignUpSuccess}
+				options={{
+					headerShown: false,
+				}}
+			/>
+				<Stack.Screen
+				name="Deletar Usuário"
+				component={UserDelete}
 				options={{
 					headerShown: false,
 				}}

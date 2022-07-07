@@ -9,7 +9,7 @@ const CategoryDelete = () => {
 	const navigation = useNavigation();
 
 	function openScreen() {
-		navigation.push("Categorias");
+		navigation.navigate("Sobre Nós");
 	}
 
 	return (

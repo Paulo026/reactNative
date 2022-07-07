@@ -6,14 +6,13 @@ export const Container = styled.View`
 	justify-content: center;
 	background-color: ${colors.tertiary};
 	align-items: center;
-	padding: 20px;
+	padding: 40px;
 `;
 
 export const Logo = styled.Image`
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
-	margin-top: 20px;
 `;
 
 export const Title = styled.Text`

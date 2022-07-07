@@ -5,7 +5,7 @@ import Gradient from "../../components/Gradient";
 import spacings from "../../Theme/spacings";
 import { useNavigation } from "@react-navigation/native";
 
-const ProductDelete = () => {
+const UserDelete = () => {
 	const navigation = useNavigation();
 
 	function openScreen() {
@@ -19,7 +19,8 @@ const ProductDelete = () => {
 			<SpacingHeight height={spacings.extraLarge} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Title>Produto deletado{"\n"}com sucesso!!</Title>
+			<SpacingHeight height={spacings.extraLarge} />
+			<Title>Usuário deletado com sucesso!</Title>
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary>
 				<TextButton onPress={openScreen}>RETORNAR</TextButton>
@@ -29,4 +30,4 @@ const ProductDelete = () => {
 	);
 };
 
-export default ProductDelete;
+export default UserDelete;

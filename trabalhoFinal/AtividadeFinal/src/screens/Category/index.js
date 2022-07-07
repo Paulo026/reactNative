@@ -39,6 +39,7 @@ const Category = () => {
 	const ListCard = ({ id, image, name }) => {
 		function openCategoryDelete() {
 			deleteCategoryApi(id);
+			console.log(id);
 			navigation.navigate("Deletar Categoria");
 		}
 

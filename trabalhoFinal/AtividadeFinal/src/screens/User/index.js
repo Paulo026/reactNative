@@ -20,62 +20,70 @@ import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from '@expo/vector-icons';
 import { Imagem } from "./styles";
-import api from './../../service/api';
+import { getUserApi, deleteUserApi } from '../../service/User';
 
-
-const ListCard = ({ nome, cpf, nascimento, login, foto, ativo }) => {
-	const navigation = useNavigation();
-
-	function openUserChange() {
-		if (nome === "Usuário 1") {
-			navigation.navigate("Alterar Usuário");
-		}
-	}
-	const checked = (<AntDesign name="checkcircle" size={13} color="black" style={{paddingTop:3}}/>);
-	const unChecked = (<AntDesign name="checkcircleo" size={13} color="black" style={{paddingTop:3}}/>);
-	const IsChecked = () => {if (ativo === true)  {
-		return checked
-	} else {
-		return unChecked
-	}
-	};
-	return (
-		<CardWrapper>
-			<Imagem>
-				<View style={{width:50}}>
-			<CardTextBold style={{whiteSpace:"nowrap"}}>{nome}</CardTextBold>
-			</View>
-			<IsChecked />
-			</Imagem>			
-			<ProductImage source={{uri:foto}} />			
-			<CardText>{cpf}</CardText>
-			<CardText>{nascimento}</CardText>
-			<CardText>{login}</CardText>
-			<CardBotton>
-				<IconsGroup>
-					<Feather name="trash" size={12} color={`${colors.quinternary}`} />
-					<Feather
-						name="edit-3"
-						size={12}
-						color={`${colors.secondary}`}
-						onPress={openUserChange}
-					/>
-				</IconsGroup>
-			</CardBotton>
-		</CardWrapper>
-	);
-};
 
 const User = () => {
-	const [usuario, setUsuario] = useState ([]);
+	const [user, setUser] = useState ([]);
+	const navigation = useNavigation();
+	const checked = (<AntDesign name="checkcircle" size={13} color="black" style={{paddingTop:3}}/>);
+	const unChecked = (<AntDesign name="checkcircleo" size={13} color="black" style={{paddingTop:3}}/>);
 
 	useEffect(() => {
-		api.get("/usuario").then((response) => {
-			setUsuario(response.data);
+		getUserApi().then((response) => {
+			setUser(response);
 		});
 	}, []);
 
-	const list = ({ item }) => (
+
+	const ListCard = ({ nome, cpf, nascimento, login, foto, ativo, id }) => {
+		const IsChecked = () => {if (ativo === true)  {
+			return checked
+		} else {
+			return unChecked
+		}
+		};
+	
+		function openUserChange() {
+			if (nome === "Usuário 1") {
+				navigation.navigate("Alterar Usuário");
+			}
+		}	
+		
+		function openUserDelete() {
+			deleteUserApi(id);
+			navigation.navigate("Deletar Usuário");
+		}
+		
+		return (
+			<CardWrapper>
+				<Imagem>
+					<View style={{width:50}}>
+				<CardTextBold style={{whiteSpace:"nowrap"}}>{nome}</CardTextBold>
+				</View>
+				<IsChecked />
+				</Imagem>			
+				<ProductImage source={{uri:foto}} />			
+				<CardText>{cpf}</CardText>
+				<CardText>{nascimento}</CardText>
+				<CardText>{login}</CardText>
+				<CardBotton>
+					<IconsGroup>
+						<Feather name="trash" size={12} color={`${colors.quinternary}`} onPress={openUserDelete}/>
+						<Feather
+							name="edit-3"
+							size={12}
+							color={`${colors.secondary}`}
+							onPress={openUserChange}
+						/>
+					</IconsGroup>
+				</CardBotton>
+			</CardWrapper>
+		);
+	};
+	
+
+	const renderUser = ({ item }) => (
 		<ListCard
 			nome={item.nome}
 			cpf={item.cpf}
@@ -84,10 +92,9 @@ const User = () => {
 			ativo={item.ativo}
 			senha={item.senha}
 			foto={item.foto}
+			id={item.id}
 		/>
 	);
-
-	const navigation = useNavigation();
 
 	function openUserCreate() {
 		navigation.navigate("Cadastro de Usuário");
@@ -111,8 +118,8 @@ const User = () => {
 			/>
 			<CardGroup>
 				<FlatList
-					data={usuario}
-					renderItem={list}
+					data={user}
+					renderItem={renderUser}
 					keyExtractor={(item) =>item.id}
 					numColumns={2}
 				/>

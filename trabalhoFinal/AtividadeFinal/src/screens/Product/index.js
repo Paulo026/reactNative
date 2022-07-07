@@ -18,58 +18,66 @@ import api from "../../service/api";
 import colors from "../../theme/colors";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-
-const ListCard = ({ name, description, quantity, price, image }) => {
-	const navigation = useNavigation();
-
-	function openProductChange() {
-		if (name === "Produto 1") {
-			navigation.navigate("Alterar Produto");
-		}
-	}
-
-	function openProductDelete() {
-		if (name === "Produto 2") {
-			navigation.navigate("Deletar Produto");
-		}
-	}
-	const priceFormated = price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
-	return (
-		<CardWrapper style={{height:200}}>
-			<CardTextBold>{name}</CardTextBold>
-			<ProductImage source={{ uri: image }} />
-			<CardTextBold>Preço: {priceFormated}</CardTextBold>
-			<CardText>Estoque: {quantity} unidades</CardText>
-			<CardText>{description}</CardText>
-			<CardBotton>
-				<IconsGroup>
-					<Feather
-						name="trash"
-						size={12}
-						color={`${colors.quinternary}`}
-						onPress={openProductDelete}
-					/>
-					<Feather
-						name="edit-3"
-						size={12}
-						color={`${colors.secondary}`}
-						onPress={openProductChange}
-					/>
-				</IconsGroup>
-			</CardBotton>
-		</CardWrapper>
-	);
-};
+import { deleteProductApi, getProductApi } from "../../service/Product";
 
 const Product = () => {
 	const [product, setProduct] = useState([]);
+	
+	const navigation = useNavigation();
+
+	function openProductCreate() {
+		navigation.navigate("Cadastro de Produto");
+	}
 
 	useEffect(() => {
-		api.get("/produto").then((response) => {
-			setProduct(response.data);
+		getProductApi().then((response) => {
+			setProduct(response);
 		});
 	}, []);
+
+	const ListCard = ({ id, name, description, quantity, price, image }) => {
+		const priceFormated = price.toLocaleString("pt-BR", {
+			style: "currency",
+			currency: "BRL",
+		});
+
+		function openProductChange() {
+			if (name === "Produto 1") {
+				navigation.navigate("Alterar Produto");
+			}
+		}
+
+		function openProductDelete() {
+			deleteProductApi(id);
+			navigation.navigate("Deletar Produto");
+		}
+
+		return (
+			<CardWrapper style={{ height: 200 }}>
+				<CardTextBold>{name}</CardTextBold>
+				<ProductImage source={{ uri: image }} />
+				<CardTextBold>Preço: {priceFormated}</CardTextBold>
+				<CardText>Estoque: {quantity} unidades</CardText>
+				<CardText>{description}</CardText>
+				<CardBotton>
+					<IconsGroup>
+						<Feather
+							name="trash"
+							size={12}
+							color={`${colors.quinternary}`}
+							onPress={openProductDelete}
+						/>
+						<Feather
+							name="edit-3"
+							size={12}
+							color={`${colors.secondary}`}
+							onPress={openProductChange}
+						/>
+					</IconsGroup>
+				</CardBotton>
+			</CardWrapper>
+		);
+	};
 
 	const renderProduct = ({ item }) => (
 		<ListCard
@@ -78,14 +86,9 @@ const Product = () => {
 			quantity={item.qtdEstoque}
 			price={item.preco}
 			image={item.foto}
+			id={item.id}
 		/>
 	);
-
-	const navigation = useNavigation();
-
-	function openProductCreate() {
-		navigation.navigate("Cadastro de Produto");
-	}
 
 	return (
 		<Container>
