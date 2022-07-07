@@ -1,7 +1,7 @@
 import { InputContainer } from "./styles";
 
-const Input = ({ placeholder }) => {
-	return <InputContainer placeholder={placeholder} />;
+const Input = ({ placeholder, onChangeText }) => {
+	return <InputContainer placeholder={placeholder} onChangeText={onChangeText} />;
 };
 
 export default Input;

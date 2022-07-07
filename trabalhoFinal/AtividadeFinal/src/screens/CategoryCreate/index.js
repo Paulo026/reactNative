@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Container, Title, SpacingHeight, WrapperTextInfo, TextLink } from "./styles";
+import React, { useState } from "react";
+import { Container, Title, SpacingHeight } from "./styles";
 import { ButtonPrimary, TextButton } from "../../components/CustomButton/styles";
 import Input from "../../components/Input";
 import Gradient from "../../components/Gradient";
@@ -7,24 +7,19 @@ import ExitButton from "../../components/ExitButton";
 import spacings from "../../Theme/spacings";
 import { useNavigation } from "@react-navigation/native";
 import SmallLogo from "../../components/SmallLogo/index";
-import { Feather } from "@expo/vector-icons";
-import colors from "../../Theme/colors";
-import createCategoryApi from "../../service/Category";
+import api from "../../service/api";
 
 const CategoryCreate = () => {
-	const [categoryCreate, setCategoryCreate] = useState({});
+	const navigation = useNavigation();
 	const [categoryName, setCategoryName] = useState("");
 	const [categoryImage, setCategoryImage] = useState("");
-	const navigation = useNavigation();
 
-	function openScreen() {
-		navigation.navigate("Sobre Nós");
-	}
-
-	function createCategory(categoryName, categoryImage) {
-		createCategoryApi(categoryName, categoryImage).then((response) => {
-			setCategoryCreate(response);
-		});
+	function createCategory() {
+		api.post(`/categoria`, {
+			nome: categoryName,
+			foto: categoryImage,
+		}).then((response) => response.data);
+		console.log(categoryName);
 		navigation.navigate("Sobre Nós");
 	}
 
@@ -35,9 +30,9 @@ const CategoryCreate = () => {
 			<SmallLogo />
 			<SpacingHeight height={spacings.extraLarge} />
 			<Title>Cadastro{"\n"}de Categoria</Title>
-			<Input placeholder={"Nome"} onChangeText={setCategoryName} />
+			<Input placeholder={"Nome"} onChangeText={(text) => setCategoryName(text)} />
 			<SpacingHeight height={spacings.extraLarge} />
-			<Input placeholder={"Link da Imagem"} onChangeText={setCategoryImage} />
+			<Input placeholder={"Link da Imagem"} onChangeText={(text) => setCategoryImage(text)} />
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary>
 				<TextButton onPress={createCategory}>CADASTRAR</TextButton>

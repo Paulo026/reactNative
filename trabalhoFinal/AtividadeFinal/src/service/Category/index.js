@@ -18,6 +18,6 @@ export const deleteCategoryApi = (id) => {
 
 export const createCategoryApi = (categoryName, categoryImage) => {
 	return api
-		.post(`/categoria`, { categoryName, categoryImage })
+		.post(`/categoria`, { nome: categoryName, foto: categoryImage })
 		.then((response) => response.data);
 };

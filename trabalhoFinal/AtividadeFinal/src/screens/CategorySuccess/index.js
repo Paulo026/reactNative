@@ -24,7 +24,7 @@ const CategorySuccess = () => {
 			<Title>Categoria cadastrada com sucesso!</Title>
 			<SpacingHeight height={spacings.extraLarge} />
 			<ButtonPrimary>
-				<TextButton onPress={openScreen}>LOGIN</TextButton>
+				<TextButton onPress={openScreen}>RETORNAR</TextButton>
 			</ButtonPrimary>
 			<Gradient position="bot" />
 		</Container>
