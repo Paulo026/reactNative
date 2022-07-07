@@ -15,6 +15,8 @@ import spacings from "../../Theme/spacings";
 import Gradient from "../../components/Gradient";
 import { useNavigation } from "@react-navigation/native";
 
+
+
 const Login = () => {
 	const navigation = useNavigation();
 

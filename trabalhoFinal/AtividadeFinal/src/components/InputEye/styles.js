@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import colors from "../../Theme/colors";
 
+
 export const InputContainer = styled.TextInput`
 	height: 30px;
 	width: 210px;
@@ -13,3 +14,4 @@ export const InputContainer = styled.TextInput`
 export const WrapperInputEye = styled.View`
 	flex-direction: row;
 `;
+
